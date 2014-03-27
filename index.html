@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>NCAA Men's Basketball Shot Charts</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+		</style>
+		<link href="css/main.css" rel="stylesheet" type="text/css">
+		<link rel="shortcut icon" type="image/png" href="http://i.usatoday.net/_common/_images/_sports/logos/ncaaf/northwestern_50t.png" />
+	</head>
+	<body>
+		<div class="container-fluid">
+			<h1>NCAA Men's Basketball Shot Charts</h1>
+			<div class="row-fluid">
+				<div id="heatmapArea">
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/heatmap.js"></script>
+		<script type="text/javascript" src="js/d3.v3.min.js"></script>
+		<script type="text/javascript" src="js/filehandler.js"></script>
+		<script type="text/javascript" src="js/chart.js"></script>
+		<script type="text/javascript">
+		
+		window.onload = function(){
+			var heatmap = h337.create({
+				"element": document.getElementById("heatmapArea"), 
+				"radius": 10, 
+				"visible": true,
+    			"opacity": 80,
+				"gradient": { 0.45: "rgb(0,0,255)", 0.55: "rgb(0,255,255)", 0.65: "rgb(0,255,0)", 0.95: "yellow", 1.0: "rgb(255,0,0)" }
+
+			});
+
+			var filenames = new Array("20140301_NEB_NW.csv", "20140306_NW_PSU.csv", "20140309_PUR_NW.csv", "20140313_IOWA_NW.csv", "20140314_MSU_NW.csv")
+			var team = "NW";
+			var data = {
+				max: 20,
+				data: []
+			};
+			heatmap.store.setDataSet(data);
+
+			var file = [];
+			for (i in filenames) {
+				file[i] = "data/"+filenames[i];
+			};
+			//mapCoords(file[0], team, heatmap);
+			//mapCoords(file[1], team, heatmap);
+			//mapCoords(file[2], team, heatmap);
+			mapCoords(file[3], team, heatmap);
+			//mapCoords(file[4], team, heatmap);
+		};
+		</script>
+	</body>
+</html>
