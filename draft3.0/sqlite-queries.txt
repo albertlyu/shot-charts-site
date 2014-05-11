@@ -1,0 +1,100 @@
+.output Whittington-Shayne-WAP.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 88468;
+.output Wilcox-C.J.-WAF.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 88583;
+.output Jefferson-Cory-BAE.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 88704;
+.output Solomon-Richard-CAH.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 97032;
+.output Bachynski-Jordan-AAR.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 97125;
+.output Brown-Alec-WBB.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 97179;
+.output Williams-Kendall-NAM.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 97222;
+.output Bairstow-Cameron-NAM.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 97224;
+.output Kirk-Alex-NAM.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 97225;
+.output Clarkson-Jordan-MBH.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 97385;
+.output Young-Patric-FAK.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 97391;
+.output Powell-Dwight-SCA.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 97471;
+.output Napier-Shabazz-CBP.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 97562;
+.output Smith-Russ-LAQ.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 97587;
+.output Brown-Markel-OAG.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 97602;
+.output Marble-Roy-Devyn-IAN.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 97656;
+.output Payne-Adreian-MAY.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 97677;
+.output McDermott-Doug-CBT.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 97718;
+.output Dinwiddie-Spencer-CBL.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 109662;
+.output Johnson-Nick-AAQ.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 109666;
+.output Carson-Jahii-AAR.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 109674;
+.output O'Bryant-III-Johnny-LAV.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 109779;
+.output Hood-Rodney-DAU.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 109781;
+.output McDaniels-K.J.-CBG.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 110089;
+.output Daniels-DeAndre-CBP.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 110093;
+.output Brown-Jabari-MBH.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 110167;
+.output Payton-Elfrid-SCF.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 110318;
+.output McAdoo-James-Michael-NAV.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 110437;
+.output Warren-T.J.-NAT.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 116007;
+.output Christon-Semaj-XAA.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 116037;
+.output Austin-Isaiah-BAE.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 116502;
+.output Smart-Marcus-OAG.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 116604;
+.output Adams-Jordan-UAA.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 116665;
+.output Anderson-Kyle-UAA.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 116666;
+.output Robinson-III-Glenn-MAX.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 116741;
+.output McGary-Mitch-MAX.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 116743;
+.output Stauskas-Nik-MAX.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 116744;
+.output Grant-Jerami-SCI.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 116757;
+.output Early-Cleanthony-WAX.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 117127;
+.output Harris-Gary-MAY.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 117555;
+.output Burton-Deonte-MAF.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 120638;
+.output LaVine-Zach-UAA.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 120692;
+.output Gordon-Aaron-AAQ.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 120791;
+.output Parker-Jabari-DAU.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 121033;
+.output Ennis-Tyler-SCI.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 121072;
+.output Vonleh-Noah-IAI.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 121075;
+.output Young-James-KAF.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 121084;
+.output Randle-Julius-KAF.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 121089;
+.output Wiggins-Andrew-KAA.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 121907;
+.output Embiid-Joel-KAA.csv
+SELECT pl.*, g.*, t.*, p.* FROM plays p JOIN games g ON p.game_id = g.game_id JOIN teams t ON p.team_id_1 = t.team_id JOIN players pl ON p.player_id_1 = pl.player_id WHERE p.player_id_1 = 121911;
