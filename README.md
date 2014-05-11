@@ -1,4 +1,4 @@
-NCAA Men's Basketball Shot Charts
+Shot Charts 3.0
 =================
 
 A Rails web application for visualizing NCAA men's basketball play-by-play shot location data from the 2013-14 season. 
