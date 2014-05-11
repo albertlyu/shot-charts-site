@@ -1,0 +1,15 @@
+<div class="stripe">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h3><%= @team.team_name %> <%= @team.team_mascot %></h3>
+        <ul>
+          <%= @players.each do |player| %>
+          <li><a href="../players/<%= player.player_id %>"><%= player.player_first_name %> <%= player.player_last_name %></a></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<br>

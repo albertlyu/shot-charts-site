@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  team_id: 
+  team_alias: MyString
+  team_name: MyString
+  team_mascot: MyString
+  team_div: MyString
+  team_conf: MyString
+
+two:
+  team_id: 
+  team_alias: MyString
+  team_name: MyString
+  team_mascot: MyString
+  team_div: MyString
+  team_conf: MyString

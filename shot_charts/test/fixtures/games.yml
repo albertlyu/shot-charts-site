@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  game_id: 
+  date: 2014-05-10
+  year: 1
+  home_team_id: 1
+  away_team_id: 1
+  venue_name: MyString
+  venue_city: MyString
+  venue_state: MyString
+
+two:
+  game_id: 
+  date: 2014-05-10
+  year: 1
+  home_team_id: 1
+  away_team_id: 1
+  venue_name: MyString
+  venue_city: MyString
+  venue_state: MyString

@@ -1,0 +1,15 @@
+<div class="stripe">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h3><%= @player.player_first_name %> <%= @player.player_last_name %></h3>
+        <ul>
+        	<%= @plays.each do |play| %>
+	        <li><%= play.details %></a></li>
+	        <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<br>

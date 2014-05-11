@@ -1,0 +1,53 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  game_id: 1
+  half: 1
+  time_minutes: 1
+  time_seconds: 1
+  details: MyString
+  player_id_1: 1
+  player_id_2: 1
+  player_first_name_1: MyString
+  player_first_name_2: MyString
+  player_last_name_1: MyString
+  player_last_name_2: MyString
+  home_score: 1
+  visitor_score: 1
+  visitor_fouls: 1
+  home_fouls: 1
+  player_score: 1
+  points_type: 1
+  detail_desc: MyString
+  event_desc: MyString
+  distance: 1
+  x_coord: 1.5
+  y_coord: 1.5
+  team_id_1: 1
+  team_id_2: 1
+
+two:
+  game_id: 1
+  half: 1
+  time_minutes: 1
+  time_seconds: 1
+  details: MyString
+  player_id_1: 1
+  player_id_2: 1
+  player_first_name_1: MyString
+  player_first_name_2: MyString
+  player_last_name_1: MyString
+  player_last_name_2: MyString
+  home_score: 1
+  visitor_score: 1
+  visitor_fouls: 1
+  home_fouls: 1
+  player_score: 1
+  points_type: 1
+  detail_desc: MyString
+  event_desc: MyString
+  distance: 1
+  x_coord: 1.5
+  y_coord: 1.5
+  team_id_1: 1
+  team_id_2: 1
