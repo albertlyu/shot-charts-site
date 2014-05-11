@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140510221642) do
+ActiveRecord::Schema.define(version: 20140511204658) do
 
   create_table "games", force: true do |t|
     t.integer  "game_id"
@@ -26,11 +26,47 @@ ActiveRecord::Schema.define(version: 20140510221642) do
     t.datetime "updated_at"
   end
 
-  create_table "players", force: true do |t|
+  create_table "playergames", force: true do |t|
+    t.integer  "game_id"
     t.integer  "player_id"
+    t.integer  "team_id"
     t.string   "player_first_name"
     t.string   "player_last_name"
-    t.integer  "player_team_id"
+    t.integer  "player_position"
+    t.integer  "player_uniform_number"
+    t.integer  "field_goals_made"
+    t.integer  "field_goals_att"
+    t.float    "field_goals_pct"
+    t.integer  "free_throws_made"
+    t.integer  "free_throws_att"
+    t.float    "free_throws_pct"
+    t.integer  "three_point_field_goals_made"
+    t.integer  "three_point_field_goals_att"
+    t.float    "three_point_field_goals_pct"
+    t.integer  "points"
+    t.integer  "rebounds_total"
+    t.integer  "rebounds_off"
+    t.integer  "rebounds_def"
+    t.integer  "assists"
+    t.integer  "steals"
+    t.integer  "blocked_shots"
+    t.integer  "turnovers"
+    t.integer  "personal_fouls"
+    t.integer  "disqualifications"
+    t.integer  "technical_fouls"
+    t.integer  "minutes"
+    t.boolean  "starter"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "players", force: true do |t|
+    t.integer  "player_id"
+    t.integer  "team_id"
+    t.string   "player_first_name"
+    t.string   "player_last_name"
+    t.integer  "player_position"
+    t.integer  "player_uniform_number"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -60,6 +96,33 @@ ActiveRecord::Schema.define(version: 20140510221642) do
     t.float    "y_coord"
     t.integer  "team_id_1"
     t.integer  "team_id_2"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "teamgames", force: true do |t|
+    t.integer  "game_id"
+    t.integer  "team_id"
+    t.integer  "field_goals_made"
+    t.integer  "field_goals_att"
+    t.float    "field_goals_pct"
+    t.integer  "free_throws_made"
+    t.integer  "free_throws_att"
+    t.float    "free_throws_pct"
+    t.integer  "three_point_field_goals_made"
+    t.integer  "three_point_field_goals_att"
+    t.float    "three_point_field_goals_pct"
+    t.integer  "points"
+    t.integer  "rebounds_total"
+    t.integer  "rebounds_off"
+    t.integer  "rebounds_def"
+    t.integer  "assists"
+    t.integer  "steals"
+    t.integer  "blocked_shots"
+    t.integer  "turnovers"
+    t.integer  "personal_fouls"
+    t.integer  "technical_fouls"
+    t.integer  "minutes"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

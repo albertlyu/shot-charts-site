@@ -1,0 +1,65 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  game_id: 
+  player_id: 
+  team_id: 1
+  first_name: MyString
+  last_name: MyString
+  position: 1
+  uniform_number: 1
+  field_goals_made: 1
+  field_goals_att: 1
+  field_goals_pct: 1.5
+  free_throws_made: 1
+  free_throws_att: 1
+  free_throws_pct: 1.5
+  three_point_field_goals_made: 1
+  three_point_field_goals_att: 1
+  three_point_field_goals_pct: 
+  points: 1
+  rebounds_total: 1
+  rebounds_off: 1
+  rebounds_def: 1
+  assists: 1
+  steals: 1
+  blocked_shots: 1
+  turnovers: 1
+  personal_fouls: 1
+  disqualifications: 1
+  technical_fouls: 1
+  minutes: 1
+  ejections: 1
+  starter: false
+
+two:
+  game_id: 
+  player_id: 
+  team_id: 1
+  first_name: MyString
+  last_name: MyString
+  position: 1
+  uniform_number: 1
+  field_goals_made: 1
+  field_goals_att: 1
+  field_goals_pct: 1.5
+  free_throws_made: 1
+  free_throws_att: 1
+  free_throws_pct: 1.5
+  three_point_field_goals_made: 1
+  three_point_field_goals_att: 1
+  three_point_field_goals_pct: 
+  points: 1
+  rebounds_total: 1
+  rebounds_off: 1
+  rebounds_def: 1
+  assists: 1
+  steals: 1
+  blocked_shots: 1
+  turnovers: 1
+  personal_fouls: 1
+  disqualifications: 1
+  technical_fouls: 1
+  minutes: 1
+  ejections: 1
+  starter: false

@@ -2,12 +2,16 @@
 
 one:
   player_id: 
+  team_id: 1
   player_first_name: MyString
   player_last_name: MyString
-  player_team_id: 1
+  player_position: 1
+  player_uniform_number: 1
 
 two:
   player_id: 
+  team_id: 1
   player_first_name: MyString
   player_last_name: MyString
-  player_team_id: 1
+  player_position: 1
+  player_uniform_number: 1

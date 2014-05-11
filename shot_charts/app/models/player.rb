@@ -1,4 +1,4 @@
 class Player < ActiveRecord::Base
 	belongs_to :team
-	has_many :plays
+	has_and_belongs_to_many :playergames
 end

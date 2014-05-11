@@ -1,11 +1,19 @@
 <div class="stripe">
   <div class="container">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-6">
         <h3><%= @team.team_name %> <%= @team.team_mascot %></h3>
         <ul>
           <%= @players.each do |player| %>
           <li><a href="../players/<%= player.player_id %>"><%= player.player_first_name %> <%= player.player_last_name %></a></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <h3>Game Log</h3>
+        <ul>
+          <%= @games.each do |game| %>
+          <li><a href="#"><%= game.date %>: <%= game.home_team_id %> vs <%= game.away_team_id %> at <%= game.venue_name %> </a></li>
           <% end %>
         </ul>
       </div>

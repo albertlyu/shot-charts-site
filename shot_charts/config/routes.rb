@@ -1,5 +1,7 @@
 ShotCharts::Application.routes.draw do
-  get '/index' => 'application#index'
+  root 'home#index'
+  get '/#' => 'home#index'
+  get '/teams' => 'application#teams'
   get '/teams/:id' => 'application#team'
   get '/players' => 'application#players'
   get '/players/:id' => 'application#player'
