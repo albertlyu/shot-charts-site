@@ -6,7 +6,8 @@ class ApplicationController < ActionController::Base
 
   def teams
     @confs = Team.select(:team_conf).distinct.order('team_conf ASC')
-    @teams = Team.where('team_conf = ?', params['id'])
+    @teams = Team.where('team_name != "" and team_div = "divia"').order('team_name ASC')
+    #@teams = Team.where('team_conf = ?', params['id'])
     @players = Player.where('player_team_id = ?', params['id']).order('player_team_id ASC')
   end
 
@@ -25,7 +26,7 @@ class ApplicationController < ActionController::Base
   def player
   	@confs = Team.select(:team_conf).distinct.order('team_conf ASC')
   	@player = Player.find_by(player_id: params['id'])
-  	@playergames = Playergame.where('player_id', params['id']).order('game_id ASC')
+  	@playergames = Playergame.where('player_id = ?', params['id']).order('game_id ASC')
     @plays = Play.where('player_id_1 = ?', params['id']).order('id ASC')
   end
 end
