@@ -43,6 +43,9 @@ gem 'bootstrap-sass', '~> 3.1.1'
 # Highcharts, a JS framework for creating interactive charts
 gem 'highcharts-rails', '~> 4.0.1'
 
+# Underscore, a JS library with useful functional programming helpers
+gem 'underscore-rails', '~> 1.6.0'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
