@@ -15,3 +15,4 @@
 //= require_tree .
 //= require highcharts
 //= require highcharts/highcharts-more
+//= require underscore
