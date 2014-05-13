@@ -2,6 +2,24 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading"><%= @player.player_first_name %> <%= @player.player_last_name %>'s Shot Chart</div>
+            <div id="shotchart"></div>
+              <%= javascript_tag do %>
+                var shots = <%= @shots %>;
+                var made = _.where(shots, {event_desc: "Field Goal Made"});
+                var miss = _.where(shots, {event_desc: "Field Goal Missed"});
+
+                console.log(shots);
+                console.log(made);
+                console.log(miss);
+              <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
         <h3><%= @player.player_first_name %> <%= @player.player_last_name %></h3>
         <ul>
         	<%= @plays.each do |play| %>
