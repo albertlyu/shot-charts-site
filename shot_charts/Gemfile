@@ -36,9 +36,12 @@ end
 gem 'bootstrap-sass', '~> 3.1.1'
 
 # JS framework for creating ambitious web applications.
-gem 'ember-rails', '~> 0.14.1'
-gem 'ember-source', '~> 1.5.0'
-gem 'handlebars-source', '~> 1.3.0'
+# gem 'ember-rails', '~> 0.14.1'
+# gem 'ember-source', '~> 1.5.0'
+# gem 'handlebars-source', '~> 1.3.0'
+
+# Highcharts, a JS framework for creating interactive charts
+gem 'highcharts-rails', '~> 4.0.1'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

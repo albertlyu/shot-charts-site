@@ -28,5 +28,6 @@ class ApplicationController < ActionController::Base
   	@player = Player.find_by(player_id: params['id'])
   	@playergames = Playergame.where('player_id = ?', params['id']).order('game_id ASC')
     @plays = Play.where('player_id_1 = ?', params['id']).order('id ASC')
+    @shots = Play.where('player_id_1 = ? and x_coord != ""', params['id']).order('id ASC')
   end
 end
