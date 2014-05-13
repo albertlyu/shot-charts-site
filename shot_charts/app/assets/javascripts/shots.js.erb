@@ -5,7 +5,7 @@ $(function() {
             zoomType: 'xy'
         },
         title: {
-            text: 'Shots'
+            text: ''
         },
         xAxis: {
             title: {
@@ -51,18 +51,18 @@ $(function() {
                 },
                 tooltip: {
                     headerFormat: '<b>{series.name}</b><br>',
-                    pointFormat: '{point.x}, {point.y}'
+                    pointFormat: '({point.x}, {point.y})'
                 }
             }
         },
         series: [{
-            name: 'Missed Shots',
-            color: 'rgba(223, 83, 83, .5)',
-            data: miss
-        }, {
             name: 'Made Shots',
             color: 'rgba(119, 152, 191, .5)',
-            data: made
+            data: madeArray
+        }, {
+            name: 'Missed Shots',
+            color: 'rgba(223, 83, 83, .5)',
+            data: missArray
         }]
     });
 });
