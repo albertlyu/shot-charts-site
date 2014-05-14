@@ -1,7 +1,7 @@
 <div class="stripe">
   <div class="container">
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-sm-9">
         <div class="panel panel-default">
           <div class="panel-heading"><%= @player.player_first_name %> <%= @player.player_last_name %>'s Shot Chart</div>
             <div id="shotchart"></div>
@@ -22,16 +22,16 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6">
-        <h3><%= @player.player_first_name %> <%= @player.player_last_name %></h3>
+      <div class="col-sm-8">
+        <h4><%= @player.player_first_name %> <%= @player.player_last_name %> Play-by-Play</h4>
         <ul>
         	<% @plays.each do |play| %>
 	        <li><%= play.details %></a></li>
 	        <% end %>
         </ul>
       </div>
-      <div class="col-md-6">
-        <h3>Game Log</h3>
+      <div class="col-sm-4">
+        <h4>Game Log</h4>
         <ul>
           <% @playergames.each do |playergame| %>
           <li><a href="#"><%= playergame.game_id %></a></li>
