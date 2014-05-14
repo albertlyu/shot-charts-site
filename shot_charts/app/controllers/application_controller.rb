@@ -1,14 +1,17 @@
 class ApplicationController < ActionController::Base
 
-  before_filter :conf
+  before_filter :index
+
+  def index
+    @confs = Team.select(:team_conf).distinct.order('team_conf ASC')
+  end
 
   def conf
-  	@confs = Team.select(:team_conf).distinct.order('team_conf ASC')
-  	@teams = Team.where('team_name != "" AND team_conf = ?', params['team_conf']).order('team_name ASC')
+   	@teams = Team.where('team_name != "" AND team_conf = ?', params['team_conf']).order('team_name ASC')
   end
 
   def teams
-    @teams = Team.where('team_name != "" and team_div = "divia"').order('team_name ASC')
+    @teams = Team.where('team_name != "" AND team_div != ""').order('team_name ASC')
     #@teams = Team.where('team_conf = ?', params['id'])
     @players = Player.where('player_team_id = ?', params['id']).order('player_team_id ASC')
   end
