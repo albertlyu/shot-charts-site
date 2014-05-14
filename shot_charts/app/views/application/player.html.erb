@@ -5,27 +5,27 @@
     </div>
     <div class="row">
       <div class="col-sm-9">
-        <div class="panel panel-default">
-          <div class="panel-heading">Shot Chart</div>
+        <% if @shots != [] %>
+          <div class="panel panel-default">
+            <div class="panel-heading">Shot Chart</div>
             <div id="shotchart"></div>
-
-              <%= javascript_tag do %>
-                var shots = <%= @shots %>;
-                var made = _.where(shots, {event_desc: "Field Goal Made"});
-                var miss = _.where(shots, {event_desc: "Field Goal Missed"});
-                var madeArray = $.map(made, function(shot, index){
-                  return [[shot.x_coord, shot.y_coord]];
-                });
-                var missArray = $.map(miss, function(shot, index){
-                  return [[shot.x_coord, shot.y_coord]];
-                });
-              <% end %>
+            <%= javascript_tag do %>
+              var shots = <%= @shots %>;
+              var made = _.where(shots, {event_desc: "Field Goal Made"});
+              var miss = _.where(shots, {event_desc: "Field Goal Missed"});
+              var madeArray = $.map(made, function(shot, index){
+                return [[shot.x_coord, shot.y_coord]];
+              });
+              var missArray = $.map(miss, function(shot, index){
+                return [[shot.x_coord, shot.y_coord]];
+              });
+            <% end %>
           </div>
-        </div>
+        <% end %>
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-8">
+      <div class="col-sm-6">
         <h4>Play-by-Play</h4>
         <ul>
         	<% @plays.each do |play| %>
@@ -33,7 +33,7 @@
 	        <% end %>
         </ul>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-3">
         <h4>Game Log</h4>
         <ul>
           <% @playergames.each do |playergame| %>
