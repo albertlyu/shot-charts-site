@@ -1,16 +1,19 @@
 <div class="stripe">
   <div class="container">
     <div class="row">
+      <h3><strong><%= @team.team_name %> <%= @team.team_mascot %></strong></h3>
+      <% if @players.all != [] %>
       <div class="col-sm-6">
-        <h3><%= @team.team_name %> <%= @team.team_mascot %></h3>
+        <h4>Players</h4>
         <ul>
           <% @players.each do |player| %>
           <li><a href="../players/<%= player.player_id %>"><%= player.player_first_name %> <%= player.player_last_name %></a></li>
           <% end %>
         </ul>
       </div>
+      <% end %>
       <div class="col-sm-6">
-        <h3>Game Log</h3>
+        <h4>Game Log</h4>
         <ul>
           <% @games.each do |game| %>
           <li><a href="#"><%= game.date %>: <%= game.home_team_id %> vs <%= game.away_team_id %> at <%= game.venue_name %> </a></li>

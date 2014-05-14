@@ -1,9 +1,12 @@
 <div class="stripe">
   <div class="container">
     <div class="row">
+      <h3><strong><%= @player.player_first_name %> <%= @player.player_last_name %></strong></h3>
+    </div>
+    <div class="row">
       <div class="col-sm-9">
         <div class="panel panel-default">
-          <div class="panel-heading"><%= @player.player_first_name %> <%= @player.player_last_name %>'s Shot Chart</div>
+          <div class="panel-heading">Shot Chart</div>
             <div id="shotchart"></div>
 
               <%= javascript_tag do %>
@@ -23,7 +26,7 @@
     </div>
     <div class="row">
       <div class="col-sm-8">
-        <h4><%= @player.player_first_name %> <%= @player.player_last_name %> Play-by-Play</h4>
+        <h4>Play-by-Play</h4>
         <ul>
         	<% @plays.each do |play| %>
 	        <li><%= play.details %></a></li>
