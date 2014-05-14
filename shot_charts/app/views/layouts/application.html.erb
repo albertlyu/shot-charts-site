@@ -62,7 +62,7 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <h3 class="nav-header">Conferences</h3>
- 			        <%= @confs.each do |conf| %>
+ 			        <% @confs.each do |conf| %>
               <li><strong><a href="/conf/<%= conf.team_conf %>"><%= conf.team_conf %></a></strong></li>
               <% end %>
             </ul>
