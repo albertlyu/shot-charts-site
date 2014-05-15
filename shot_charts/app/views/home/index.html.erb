@@ -5,6 +5,6 @@
 <h3>NCAA Men's Basketball Division I Teams</h3>
 <ul>
   <% @teams.each do |team| %>
-  <li><a href="teams/<%= team.team_id %>"><%= team.team_name %> <%= team.team_mascot %></a></li>
+  <li><a href="teams/<%= team.id %>"><%= team.team_name %> <%= team.team_mascot %></a></li>
   <% end %>
 </ul>

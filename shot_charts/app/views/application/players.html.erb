@@ -1,4 +1,4 @@
-<h3>All NCAA Men's Basketball Division I Players</h3>
+<h3><strong>All NCAA Men's Basketball Division I Players</strong></h3>
 <ul>
   <% @players.each do |player| %>
   <li><a href="players/<%= player.player_id %>"><%= player.player_first_name %> <%= player.player_last_name %></a></li>

@@ -1,0 +1,13 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-9">
+			<h3>Game Play-by-Play</h3>
+			<h5>Game details: <%= @game.date %>: <%= @home.team_name %> vs <%= @away.team_name %> at <%= @game.venue_name %></h5>
+			<ul>
+			<% @plays.each do |play| %>
+			<li><%= play.details %></a></li>
+			<% end %>
+			</ul>
+		</div>
+	</div>
+</div>
