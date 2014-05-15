@@ -1,0 +1,42 @@
+<div class="stripe">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9">
+        <h3><strong>Draft 3.0 Top 50 Players</strong></h3>
+      </div>
+      <div class="col-sm-9">
+        <h4>Point Guards</h4>
+        <ul>
+          <% @pg.each do |player| %>
+          <li><a href="../players/<%= player.player_id %>"><%= player.player_first_name %> <%= player.player_last_name %>, <%= player.team.team_name %> <%= player.team.team_mascot %></a></li>
+          <% end %>
+        </ul>
+        <h4>Shooting Guards</h4>
+        <ul>
+          <% @sg.each do |player| %>
+          <li><a href="../players/<%= player.player_id %>"><%= player.player_first_name %> <%= player.player_last_name %>, <%= player.team.team_name %> <%= player.team.team_mascot %></a></li>
+          <% end %>
+        </ul>
+        <h4>Small Forwards</h4>
+        <ul>
+          <% @sf.each do |player| %>
+          <li><a href="../players/<%= player.player_id %>"><%= player.player_first_name %> <%= player.player_last_name %>, <%= player.team.team_name %> <%= player.team.team_mascot %></a></li>
+          <% end %>
+        </ul>
+        <h4>Power Forwards</h4>
+        <ul>
+          <% @pf.each do |player| %>
+          <li><a href="../players/<%= player.player_id %>"><%= player.player_first_name %> <%= player.player_last_name %>, <%= player.team.team_name %> <%= player.team.team_mascot %></a></li>
+          <% end %>
+        </ul>
+        <h4>Centers</h4>
+        <ul>
+          <% @c.each do |player| %>
+          <li><a href="../players/<%= player.player_id %>"><%= player.player_first_name %> <%= player.player_last_name %>, <%= player.team.team_name %> <%= player.team.team_mascot %></a></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
