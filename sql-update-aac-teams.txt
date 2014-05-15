@@ -1,0 +1,3 @@
+UPDATE teams 
+SET team_conf = 'aac'
+WHERE team_id IN ('119','324','29','40','116','123','49','120','43');
