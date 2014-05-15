@@ -2,7 +2,7 @@
 
 one:
   game_id: 
-  date: 2014-05-10
+  date: 2014-05-14
   year: 1
   home_team_id: 1
   away_team_id: 1
@@ -12,7 +12,7 @@ one:
 
 two:
   game_id: 
-  date: 2014-05-10
+  date: 2014-05-14
   year: 1
   home_team_id: 1
   away_team_id: 1

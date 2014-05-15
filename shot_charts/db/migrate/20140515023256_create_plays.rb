@@ -1,6 +1,5 @@
 class CreatePlays < ActiveRecord::Migration
   def change
-    #drop_table :plays
     create_table :plays do |t|
       t.integer :game_id
       t.integer :half

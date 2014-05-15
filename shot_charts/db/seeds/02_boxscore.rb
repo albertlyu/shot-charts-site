@@ -10,7 +10,7 @@ for boxscore in boxscore_paths
 	for team in teams
 		players = team['players']['player']
 
-		#tg = Teamgame.new
+		#tg = TeamGame.new
 		#tg.game_id = game_id
 		#tg.team_id = team_id
 		#tg.field_goals_made = ['field-goals']['made']
@@ -51,7 +51,7 @@ for boxscore in boxscore_paths
 				end
 			end
 
-			plg = Playergame.new
+			plg = PlayerGame.new
 			plg.game_id = game_id
 			plg.player_id = player['id']
 			plg.team_id = team['id']

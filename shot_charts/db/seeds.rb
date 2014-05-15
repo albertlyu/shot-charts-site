@@ -6,4 +6,4 @@
 #   cities = City.create([{ name: 'Chicago' } { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel' city: cities.first)
 
-Dir[File.join(Rails.root, 'db', 'seeds', '02_boxscore.rb')].sort.each { |seed| load seed }
+Dir[File.join(Rails.root, 'db', 'seeds', '*.rb')].sort.each { |seed| load seed }

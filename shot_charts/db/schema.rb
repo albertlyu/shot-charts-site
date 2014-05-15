@@ -11,10 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140511204658) do
+ActiveRecord::Schema.define(version: 20140515030315) do
 
-  create_table "games", force: true do |t|
-    t.integer  "game_id"
+  create_table "games", primary_key: "game_id", force: true do |t|
     t.date     "date"
     t.integer  "year"
     t.integer  "home_team_id"
@@ -26,9 +25,9 @@ ActiveRecord::Schema.define(version: 20140511204658) do
     t.datetime "updated_at"
   end
 
-  create_table "playergames", force: true do |t|
-    t.integer  "game_id"
+  create_table "player_games", force: true do |t|
     t.integer  "player_id"
+    t.integer  "game_id"
     t.integer  "team_id"
     t.string   "player_first_name"
     t.string   "player_last_name"
@@ -60,8 +59,7 @@ ActiveRecord::Schema.define(version: 20140511204658) do
     t.datetime "updated_at"
   end
 
-  create_table "players", force: true do |t|
-    t.integer  "player_id"
+  create_table "players", primary_key: "player_id", force: true do |t|
     t.integer  "team_id"
     t.string   "player_first_name"
     t.string   "player_last_name"
@@ -100,7 +98,7 @@ ActiveRecord::Schema.define(version: 20140511204658) do
     t.datetime "updated_at"
   end
 
-  create_table "teamgames", force: true do |t|
+  create_table "team_games", force: true do |t|
     t.integer  "game_id"
     t.integer  "team_id"
     t.integer  "field_goals_made"
@@ -127,8 +125,7 @@ ActiveRecord::Schema.define(version: 20140511204658) do
     t.datetime "updated_at"
   end
 
-  create_table "teams", force: true do |t|
-    t.integer  "team_id"
+  create_table "teams", primary_key: "team_id", force: true do |t|
     t.string   "team_alias"
     t.string   "team_name"
     t.string   "team_mascot"

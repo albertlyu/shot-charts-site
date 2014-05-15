@@ -1,8 +1,7 @@
 class CreatePlayers < ActiveRecord::Migration
   def change
-    #drop_table :players
-    create_table :players do |t|
-      t.integer :player_id, :options => 'PRIMARY KEY'
+    create_table :players, id: false do |t|
+      t.primary_key :player_id
       t.integer :team_id
       t.string :player_first_name
       t.string :player_last_name

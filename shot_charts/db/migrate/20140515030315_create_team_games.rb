@@ -1,9 +1,8 @@
-class CreateTeamgames < ActiveRecord::Migration
+class CreateTeamGames < ActiveRecord::Migration
   def change
-    #drop_table :teamgames
-    create_table :teamgames do |t|
-      t.integer :game_id, :options => 'PRIMARY KEY'
-      t.integer :team_id, :options => 'PRIMARY KEY'
+    create_table :team_games do |t|
+      t.integer :game_id
+      t.integer :team_id
       t.integer :field_goals_made
       t.integer :field_goals_att
       t.float :field_goals_pct
