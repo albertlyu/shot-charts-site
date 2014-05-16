@@ -8,14 +8,14 @@
           var shots = <%= @shots %>;
           var made = _.where(shots, {event_desc: "Field Goal Made"});
           var miss = _.where(shots, {event_desc: "Field Goal Missed"});
+          var two = _.where(shots, {points_type: 2});
+          var three = _.where(shots, {points_type: 3});
           var madeArray = $.map(made, function(shot, index){
             return [[shot.x_coord, shot.y_coord]];
           });
           var missArray = $.map(miss, function(shot, index){
             return [[shot.x_coord, shot.y_coord]];
           });
-          console.log(madeArray);
-          console.log(missArray);
         <% end %>
       </div>
     <% end %>

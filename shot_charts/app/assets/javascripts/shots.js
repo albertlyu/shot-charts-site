@@ -2,7 +2,7 @@ $(function() {
     $('#shotchart').highcharts({
         chart: {
             type: 'scatter',
-            zoomType: 'xy'
+            plotBackgroundImage: '/assets/court.png'
         },
         title: {
             text: ''
@@ -22,7 +22,10 @@ $(function() {
             title: {
                 text: 'y'
             },
-            max: 30
+            min: -1,
+            max: 30,
+            gridLineWidth: 0,
+            lineWidth: 1
         },
         legend: {
             layout: 'vertical',
