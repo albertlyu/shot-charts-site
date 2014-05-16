@@ -3,8 +3,8 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use postgres as the database for Active Record <-- change from sqlite3 to Postgres
+gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -45,6 +45,10 @@ gem 'highcharts-rails', '~> 4.0.1'
 
 # Underscore, a JS library with useful functional programming helpers
 gem 'underscore-rails', '~> 1.6.0'
+
+# Thin, a production-grade Ruby web server to replace out-of-the-box WEBrick
+#gem 'eventmachine', '~> 1.0.3'
+#gem 'thin', '~> 1.6.2'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

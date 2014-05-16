@@ -28,8 +28,8 @@ $(function() {
             layout: 'vertical',
             align: 'left',
             verticalAlign: 'top',
-            x: 100,
-            y: 70,
+            x: 55,
+            y: 0,
             floating: true,
             backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF',
             borderWidth: 1
