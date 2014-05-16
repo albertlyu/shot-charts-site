@@ -32,6 +32,7 @@ class ApplicationController < ActionController::Base
     @team = Team.find_by(team_id: params['id'])
     @games = Game.where('home_team_id = ? OR away_team_id = ?', params['id'], params['id']).order('date ASC')
     @players = Player.where('team_id = ?', params['id']).order('player_id ASC')
+    @shots = Play.where('team_id_1 = ? and x_coord != ""', params['id']).to_json.html_safe#.pluck(:x_coord, :y_coord).to_json
   end
 
   def player

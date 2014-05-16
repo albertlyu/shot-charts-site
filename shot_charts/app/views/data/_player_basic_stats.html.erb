@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col-sm-9">
+    <table class="table table-striped table-bordered">
+      <tr>
+        <th>Pts/Gm</th>
+        <th>Reb/Gm</th>
+        <th>Ast/Gm</th>
+        <th>Stl/Gm</th>
+        <th>Blk/Gm</th>
+        <th>FG%</th>
+        <th>FT%</th>
+        <th>3FG%</th>
+        <th>eFG%</th>
+        <th>Pts/40</th>
+        <th>Reb/40</th>
+        <th>Ast/40</th>
+      </tr>
+      <tr>
+        <td><%= '%.1f' % @playergames.average(:points) %></td>
+        <td><%= '%.1f' % @playergames.average(:rebounds_total) %></td>
+        <td><%= '%.1f' % @playergames.average(:assists) %></td>
+        <td><%= '%.1f' % @playergames.average(:steals) %></td>
+        <td><%= '%.1f' % @playergames.average(:blocked_shots) %></td>
+        <td><%= '%.3f' % (@playergames.sum(:field_goals_made).to_f / @playergames.sum(:field_goals_att)) %></td>
+        <td><%= '%.3f' % (@playergames.sum(:free_throws_made).to_f / @playergames.sum(:free_throws_att)) %></td>
+        <td><%= '%.3f' % (@playergames.sum(:three_point_field_goals_made).to_f / @playergames.sum(:three_point_field_goals_att)) %></td>
+        <td><%= '%.3f' % ((@playergames.sum(:field_goals_made) + (0.5 * @playergames.sum(:three_point_field_goals_made))) / @playergames.sum(:field_goals_att).to_f) %></td>
+        <td><%= '%.1f' % (@playergames.sum(:points) / (@playergames.sum(:minutes)/40)) %></td>
+        <td><%= '%.1f' % (@playergames.sum(:rebounds_total) / (@playergames.sum(:minutes)/40)) %></td>
+        <td><%= '%.1f' % (@playergames.sum(:assists) / (@playergames.sum(:minutes)/40)) %></td>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 <h3><strong>All NCAA Men's Basketball Division I Players</strong></h3>
-<ul>
-  <% @players.each do |player| %>
-  <li><a href="players/<%= player.player_id %>"><%= player.player_first_name %> <%= player.player_last_name %></a></li>
-  <% end %>
-</ul>
+<div class="btn-group">
+<% @players.each do |player| %>
+  <a class="btn btn-default" href="../players/<%= player.player_id %>"><%= player.player_first_name %> <%= player.player_last_name %></a>
+<% end %>
+</div>

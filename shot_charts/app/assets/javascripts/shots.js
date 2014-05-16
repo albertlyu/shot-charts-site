@@ -12,6 +12,8 @@ $(function() {
                 enabled: true,
                 text: 'x'
             },
+            min: -30,
+            max: 30,
             startOnTick: true,
             endOnTick: true,
             showLastLabel: true
@@ -20,6 +22,7 @@ $(function() {
             title: {
                 text: 'y'
             },
+            max: 30
         },
         legend: {
             layout: 'vertical',

@@ -4,25 +4,12 @@
       <div class="col-sm-9">
         <h3><strong><%= @player.player_first_name %> <%= @player.player_last_name %></strong></h3>
         <h4><%= @player.team.team_name %> <%= @player.team.team_mascot %></h4>
-        <% if @shots != "[]" %>
-          <div class="panel panel-default">
-            <div class="panel-heading">Shot Chart</div>
-            <div id="shotchart"></div>
-            <%= javascript_tag do %>
-              var shots = <%= @shots %>;
-              var made = _.where(shots, {event_desc: "Field Goal Made"});
-              var miss = _.where(shots, {event_desc: "Field Goal Missed"});
-              var madeArray = $.map(made, function(shot, index){
-                return [[shot.x_coord, shot.y_coord]];
-              });
-              var missArray = $.map(miss, function(shot, index){
-                return [[shot.x_coord, shot.y_coord]];
-              });
-            <% end %>
-          </div>
-        <% end %>
       </div>
     </div>
+    
+    <%= render "data/shots" %>
+    <%= render "data/player_basic_stats" %>
+
     <div class="row">
       <div class="col-sm-6">
         <h4>Play-by-Play</h4>

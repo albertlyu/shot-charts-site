@@ -4,14 +4,17 @@
       <div class="col-sm-9">
         <h3><strong><%= @team.team_name %> <%= @team.team_mascot %></strong></h3>
       </div>
-      <% if @players.all != [] %>
     </div>
+
+    <%= render "data/shots" %>
+    
     <div class="row">
+      <% if @players.all != [] %>
       <div class="col-sm-9">
         <h4>Players</h4>
         <div class="btn-group">
         <% @players.each do |player| %>
-          <a class="btn btn-default" href="../players/<%= player.player_id %>"><%= player.player_position %> <%= player.player_first_name %> <%= player.player_last_name %></a>
+          <a class="btn btn-default" href="../players/<%= player.player_id %>"><%= player.player_first_name %> <%= player.player_last_name %></a>
         <% end %>
         </div>
       </div>

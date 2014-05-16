@@ -10,4 +10,6 @@ ShotCharts::Application.routes.draw do
   get '/teams/:id' => 'application#team'
   get '/players/:id' => 'application#player'
   get '/games/:id' => 'application#game'
+
+  resources :data
 end
