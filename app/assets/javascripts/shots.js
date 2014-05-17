@@ -2,7 +2,7 @@ $(function() {
     $('#shotchart').highcharts({
         chart: {
             type: 'scatter',
-            plotBackgroundImage: '/assets/court.png'
+            plotBackgroundImage: 'https://dl-web.dropbox.com/get/court.png?_subject_uid=1177649&w=AAAwdf2A5Pzo3NY8iXJkzAtQ-myPY0KBXCJ_6U1FL14Khg'
         },
         title: {
             text: ''
