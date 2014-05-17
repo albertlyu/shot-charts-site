@@ -50,14 +50,19 @@ gem 'underscore-rails', '~> 1.6.0'
 #gem 'eventmachine', '~> 1.0.3'
 #gem 'thin', '~> 1.6.2'
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+# rails_12factor, to replace the need for plugins for Heroku
+gem 'rails_12factor', group: :production
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
+
+# Use ActiveModel has_secure_password
+# gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+ruby '2.0.0'
