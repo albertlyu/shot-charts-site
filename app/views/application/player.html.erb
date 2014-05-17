@@ -11,15 +11,7 @@
     <%= render "data/player_basic_stats" %>
 
     <div class="row">
-      <div class="col-sm-6">
-        <h4>Play-by-Play</h4>
-        <ul>
-        	<% @plays.each do |play| %>
-	        <li><%= play.details %></a></li>
-	        <% end %>
-        </ul>
-      </div>
-      <div class="col-sm-3">
+      <div class="col-sm-9">
         <h4>Game Log</h4>
         <ul>
           <% @playergames.each do |playergame| %>

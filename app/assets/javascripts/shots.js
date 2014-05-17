@@ -55,20 +55,49 @@ $(function() {
                         }
                     }
                 },
-                tooltip: {
-                    headerFormat: '<b>{series.name}</b><br>',
-                    pointFormat: '({point.x}, {point.y})'
-                }
             }
         },
         series: [{
             name: 'Made Shots',
             color: 'rgba(119, 152, 191, .5)',
-            data: madeArray
+            data: (function () {
+
+                var madeArray = [];
+                $.map(made, function(shot, index){
+                    madeArray.push({
+                        x: shot.x_coord,
+                        y: shot.y_coord,
+                        name: shot.details,
+                    });
+                });
+                
+                console.log(madeArray);
+                return madeArray;
+            })()
         }, {
             name: 'Missed Shots',
             color: 'rgba(223, 83, 83, .5)',
-            data: missArray
-        }]
+            data: (function () {
+
+                var missArray = [];
+                $.map(miss, function(shot, index){
+                    missArray.push({
+                        x: shot.x_coord,
+                        y: shot.y_coord,
+                        name: shot.details,
+                    });
+                });
+                
+                console.log(missArray);
+                return missArray;
+            })()
+        }],
+        tooltip: {
+            //headerFormat: '<b>{series.name}</b><br>',
+            //pointFormat: '({point.x}, {point.y})',
+            formatter: function() {
+                return this.point.name;
+            }
+        },
     });
 });
