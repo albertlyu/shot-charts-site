@@ -55,6 +55,7 @@ $(function() {
                         }
                     }
                 },
+                turboThreshold: 2000,
             }
         },
         series: [{
@@ -98,6 +99,6 @@ $(function() {
             formatter: function() {
                 return this.point.name;
             }
-        },
+        }
     });
 });

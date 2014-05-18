@@ -3,7 +3,8 @@ class ApplicationController < ActionController::Base
   before_filter :index
 
   def index
-    @confs = Team.select(:team_conf).distinct.order("team_conf ASC")
+    @confs = Team.where("team_div = 'divia'").select(:team_conf).distinct.order("team_conf ASC")
+    @teams = Team.where("team_name != '' and team_div = 'divia'").order("team_name ASC")
   end
 
   def draft
@@ -24,10 +25,6 @@ class ApplicationController < ActionController::Base
     @players = Player.all.order("player_last_name ASC")
   end
 
-  def conf
-    @teams = Team.where("team_name != '' AND team_conf = ?", params["team_conf"]).order("team_name ASC")
-  end
-
   def team
     @team = Team.find_by(team_id: params['id'])
     @games = Game.where("home_team_id = ? OR away_team_id = ?", params['id'], params['id']).order("date ASC")
@@ -39,7 +36,7 @@ class ApplicationController < ActionController::Base
     @player = Player.find_by(player_id: params['id'])
     @playergames = PlayerGame.where("player_id = ?", params['id']).order("game_id ASC")
     @plays = Play.where("player_id_1 = ?", params['id']).order("id ASC")
-    @shots = Play.where("player_id_1 = ? AND x_coord IS NOT NULL", params['id']).to_json.html_safe#.pluck(:x_coord, :y_coord).to_json
+    @shots = Play.where("player_id_1 = ? AND x_coord IS NOT NULL", params['id']).to_json.html_safe
   end
 
   def game

@@ -14,7 +14,7 @@
         <h4>Players</h4>
         <div class="btn-group">
         <% @players.each do |player| %>
-          <a class="btn btn-default" href="../players/<%= player.player_id %>"><%= player.player_first_name %> <%= player.player_last_name %></a>
+          <a class="btn btn-default" style="width:220px; margin:5px"  href="../players/<%= player.player_id %>"><%= player.player_first_name %> <%= player.player_last_name %></a>
         <% end %>
         </div>
       </div>

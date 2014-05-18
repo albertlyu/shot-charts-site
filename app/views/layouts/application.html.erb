@@ -48,26 +48,38 @@
         <a class="navbar-brand" href="/#">Shot Charts 3.0</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Draft 3.0", "/draft" %></li>
-            <li><%= link_to "Teams", "/teams" %></li>
-            <li><%= link_to "Players", "/players"  %></li>
-            <li><%= link_to "About", "#"  %></li>
+            <li align="center"><%= link_to "Draft 3.0", "/draft" %></li>
+            <li align="center"><%= link_to "Teams", "/teams" %></li>
+            <li align="center"><%= link_to "Players", "/players"  %></li>
+            <li align="center"><%= link_to "About", "#"  %></li>
           </ul>
         </div>
       </div>
     </div>
-
     <div class="container">
       <div class="row">
-        <div class="col-sm-3">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <h4 class="nav-header">Conferences</h4>
-              <% @confs.each do |conf| %>
-              <li><strong><a href="/conf/<%= conf.team_conf %>"><%= conf.team_conf %></a></strong></li>
-              <% end %>
-            </ul>
-          </div><!--/.well -->
+        <div class="col-sm-3 hidden-xs">
+          <h4 class="nav-header">Conferences</h4>
+          <div class="panel-group" id="accordion">
+            <% @confs.each do |conf| %>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= conf.team_conf %>">
+                    <%= conf.team_conf %>
+                  </a>
+                </h4>
+              </div>
+              <div id="collapse<%= conf.team_conf %>" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <% @teams.where("team_conf = ?", conf.team_conf).each do |team| %>
+                    <a href="/teams/<%= team.team_id %>"><%= team.team_name %></a><br>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+            <% end %>
+          </div>
         </div><!--/span-->
         <div class="col-sm-9">
           <%= yield %>
