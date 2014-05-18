@@ -2,10 +2,11 @@
 
 <%= render "data/shots" %>
 <%= render "data/player_basic_stats" %>
+<%= render "data/player_shot_stats" %>
 
 <h4>Game Log</h4>
 <ul>
   <% @playergames.each do |playergame| %>
-  <li><a href="../games/<%= playergame.game_id %>"><%= playergame.game.date %>: <%= Team.find_by(team_id: playergame.game.home_team_id).team_name %> vs <%= Team.find_by(team_id: playergame.game.away_team_id).team_name %> at <%= playergame.game.venue_name %> </a></li>
+  <li><a href="../games/<%= playergame.game_id %>"><%= playergame.game_id %></a></li>
   <% end %>
 </ul>
