@@ -1,24 +1,20 @@
-<div class="row">
-  <div class="col-sm-9">
-    <table class="table table-striped table-bordered">
-      <tr>
-        <th>eFG%</th>
-        <th>TS%</th>
-        <th>At Rim FG%</th>
-        <th>3-9 ft FG%</th>
-        <th>10-15 ft FG%</th>
-        <th>16-21 ft FG%</th>
-        <th>3 pt FG%</th>
-      </tr>
-      <tr>
-        <td><%= '%.3f' % ((@playergames.sum(:field_goals_made) + (0.5 * @playergames.sum(:three_point_field_goals_made))) / @playergames.sum(:field_goals_att).to_f) %></td>
-        <td><%= '%.3f' % (@playergames.sum(:points).to_f / ((@playergames.sum(:field_goals_att)) + (0.44 * @playergames.sum(:free_throws_att)))) %></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </table>
-  </div>
-</div>
+<table class="table table-striped table-bordered">
+  <tr>
+    <th>eFG%</th>
+    <th>TS%</th>
+    <th>At Rim FG%</th>
+    <th>3-9 ft FG%</th>
+    <th>10-15 ft FG%</th>
+    <th>16-21 ft FG%</th>
+    <th>3 pt FG%</th>
+  </tr>
+  <tr>
+    <td><%= '%.3f' % ((@playergames.sum(:field_goals_made) + (0.5 * @playergames.sum(:three_point_field_goals_made))) / @playergames.sum(:field_goals_att).to_f) %></td>
+    <td><%= '%.3f' % (@playergames.sum(:points).to_f / ((@playergames.sum(:field_goals_att)) + (0.44 * @playergames.sum(:free_throws_att)))) %></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>

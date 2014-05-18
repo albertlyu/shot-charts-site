@@ -11,7 +11,7 @@
   <h4><%= conf.team_conf %></h4>
   <div class="btn-group">
     <% @teams.where("team_conf = ?", conf.team_conf).each do |team| %>
-    <a class="btn btn-default" style="width:220px; margin:5px" href="/teams/<%= team.team_id %>"><%= team.team_name %></a><br>
+    <a class="btn btn-default" style="width:210px; margin:5px" href="/teams/<%= team.team_id %>"><%= team.team_name %></a><br>
     <% end %>    
   <% end %>
   </div>
