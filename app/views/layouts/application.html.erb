@@ -58,27 +58,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-2 col-sm-3 hidden-xs">
-          <h4 class="nav-header">Conferences</h4>
-          <div class="panel-group" id="accordion">
-            <% @confs.each do |conf| %>
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= conf.team_conf %>">
-                    <%= conf.team_conf %>
-                  </a>
-                </h4>
-              </div>
-              <div id="collapse<%= conf.team_conf %>" class="panel-collapse collapse">
-                <div class="panel-body">
-                  <% @teams.where("team_conf = ?", conf.team_conf).each do |team| %>
-                    <a href="/teams/<%= team.team_id %>"><%= team.team_name %></a><br>
-                  <% end %>
-                </div>
-              </div>
-            </div>
-            <% end %>
-          </div>
+          <%= render "partials/conf_accordion" %>
           <div class="row">     
             <footer>
               <p>&copy; Albert Lyu 2014</p>
