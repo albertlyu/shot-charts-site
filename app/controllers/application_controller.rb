@@ -37,6 +37,7 @@ class ApplicationController < ActionController::Base
     @playergames = PlayerGame.where("player_id = ?", params['id']).order("game_id ASC")
     @plays = Play.where("player_id_1 = ?", params['id']).order("id ASC")
     @shots = Play.where("player_id_1 = ? AND x_coord IS NOT NULL", params['id']).to_json.html_safe
+    @player_basic_stats = PlayerGame.select("AVG(player_games.points) AS ppg, AVG(player_games.rebounds_total) AS rpg, AVG(player_games.assists) AS apg, AVG(player_games.steals) AS spg, AVG(player_games.blocked_shots) AS bpg, (SUM(player_games.field_goals_made)::float/SUM(player_games.field_goals_att)::float) AS fgpct, (SUM(player_games.free_throws_made)::float/SUM(player_games.free_throws_att)::float) AS ftpct, (SUM(player_games.three_point_field_goals_made)::float/SUM(player_games.three_point_field_goals_att)::float) AS threefgpct, (SUM(player_games.field_goals_made)::float+0.5*SUM(player_games.three_point_field_goals_made))/SUM(player_games.field_goals_att)::float AS efgpct, SUM(player_games.points)::float/(SUM(player_games.minutes)::float/40.0) AS pp40, SUM(player_games.rebounds_total)::float/(SUM(player_games.minutes)::float/40.0) AS rp40, SUM(player_games.assists)::float/(SUM(player_games.minutes)::float/40.0) AS ap40, SUM(player_games.steals)::float/(SUM(player_games.minutes)::float/40.0) AS sp40, SUM(player_games.blocked_shots)::float/(SUM(player_games.minutes)::float/40.0) AS bp40").where("player_id = ?", params['id']).group(:player_id)
   end
 
   def game

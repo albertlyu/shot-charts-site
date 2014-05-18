@@ -14,17 +14,19 @@
     <th>Ast/40</th>
   </tr>
   <tr>
-    <td><%= '%.1f' % @playergames.average(:points) %></td>
-    <td><%= '%.1f' % @playergames.average(:rebounds_total) %></td>
-    <td><%= '%.1f' % @playergames.average(:assists) %></td>
-    <td><%= '%.1f' % @playergames.average(:steals) %></td>
-    <td><%= '%.1f' % @playergames.average(:blocked_shots) %></td>
-    <td><%= '%.3f' % (@playergames.sum(:field_goals_made).to_f / @playergames.sum(:field_goals_att)) %></td>
-    <td><%= '%.3f' % (@playergames.sum(:free_throws_made).to_f / @playergames.sum(:free_throws_att)) %></td>
-    <td><%= '%.3f' % (@playergames.sum(:three_point_field_goals_made).to_f / @playergames.sum(:three_point_field_goals_att)) %></td>
-    <td><%= '%.3f' % ((@playergames.sum(:field_goals_made) + (0.5 * @playergames.sum(:three_point_field_goals_made))) / @playergames.sum(:field_goals_att).to_f) %></td>
-    <td><%= '%.1f' % (@playergames.sum(:points).to_f / (@playergames.sum(:minutes).to_f/40)) %></td>
-    <td><%= '%.1f' % (@playergames.sum(:rebounds_total).to_f / (@playergames.sum(:minutes)/40).to_f) %></td>
-    <td><%= '%.1f' % (@playergames.sum(:assists).to_f / (@playergames.sum(:minutes)/40).to_f) %></td>
+    <% @player_basic_stats.each do |stat| %>
+    <td><%= '%.1f' % stat.ppg %></td>
+    <td><%= '%.1f' % stat.rpg %></td>
+    <td><%= '%.1f' % stat.apg %></td>
+    <td><%= '%.1f' % stat.spg %></td>
+    <td><%= '%.1f' % stat.bpg %></td>
+    <td><%= '%.3f' % stat.fgpct %></td>
+    <td><%= '%.3f' % stat.ftpct %></td>
+    <td><%= '%.3f' % stat.threefgpct %></td>
+    <td><%= '%.3f' % stat.efgpct %></td>
+    <td><%= '%.1f' % stat.pp40 %></td>
+    <td><%= '%.1f' % stat.rp40 %></td>
+    <td><%= '%.1f' % stat.ap40 %></td>
+    <% end %>
   </tr>
 </table>
