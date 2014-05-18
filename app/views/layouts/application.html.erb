@@ -37,7 +37,6 @@
     <%= javascript_include_tag "application" %>
   </head>
   <body>
-
     <div class="navbar navbar-default navbar-static-top">
       <div class="container">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
@@ -80,17 +79,16 @@
             </div>
             <% end %>
           </div>
+          <div class="row">     
+            <footer>
+              <p>&copy; Albert Lyu 2014</p>
+            </footer>
+          </div>
         </div><!--/span-->
         <div class="col-sm-9">
           <%= yield %>
         </div>
       </div><!--/row-->
-
-      <footer>
-        <p>&copy; Albert Lyu 2014</p>
-      </footer>
-
     </div> <!-- /container -->
-
   </body>
 </html>

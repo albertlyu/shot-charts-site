@@ -2,8 +2,8 @@ $(function() {
     $('#shotchart').highcharts({
         chart: {
             type: 'scatter',
-            plotBackgroundImage: 'http://dl.dropboxusercontent.com/s/lfd3doj34oa3b3c/court.png'
-        },
+            plotBackgroundImage: 'http://dl.dropboxusercontent.com/s/lfd3doj34oa3b3c/court.png' 
+       },
         title: {
             text: ''
         },
@@ -14,6 +14,7 @@ $(function() {
             },
             min: -30,
             max: 30,
+            tickInterval: 5,
             startOnTick: true,
             endOnTick: true,
             showLastLabel: true
@@ -24,6 +25,7 @@ $(function() {
             },
             min: -1,
             max: 30,
+            tickWidth: 1,
             gridLineWidth: 0,
             lineWidth: 1
         },

@@ -10,13 +10,11 @@
     
     <div class="row">
       <% if @players.all != [] %>
-      <div class="col-sm-9">
+      <div class="col-sm-9 col-xs-12">
         <h4>Players</h4>
-        <div class="btn-group">
-        <% @players.each do |player| %>
-          <a class="btn btn-default" style="width:220px; margin:5px"  href="../players/<%= player.player_id %>"><%= player.player_first_name %> <%= player.player_last_name %></a>
-        <% end %>
-        </div>
+
+        <%= render "partials/player_button" %>
+        
       </div>
       <% end %>
     </div>

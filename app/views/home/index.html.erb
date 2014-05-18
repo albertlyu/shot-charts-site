@@ -3,10 +3,8 @@
 <p>This is a website that provides statistics and shot chart visualizations for NCAA Men's Basketball Division I players.</p>
 
 <h3>NCAA Men's Basketball Division I Teams</h3>
-<div class="btn-group hidden-xs">
-  <% @teams.each do |team| %>
-  <a class="btn btn-default" style="width:220px; margin:5px" href="teams/<%= team.id %>"><%= team.team_name %> <%= team.team_mascot %></a>
-  <% end %>
+<div class="hidden-xs">
+  <%= render "partials/team_button" %>
 </div>
 <div class="container visible-xs">
   <% @confs.each do |conf| %>
