@@ -13,10 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-tablesorter
+//= require bootstrap
+//= require underscore
 //= require highcharts
 //= require highcharts/highcharts-more
-//= require underscore
-//= require bootstrap
 $(document).ready(function(){
 	$('table').tablesorter();
 	$('thead').tooltip();
