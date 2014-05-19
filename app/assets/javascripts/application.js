@@ -12,8 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require jquery-tablesorter
 //= require highcharts
 //= require highcharts/highcharts-more
 //= require underscore
 //= require bootstrap
+$(document).ready(function(){
+	$('table').tablesorter();
+	$('thead').tooltip();
+});
+//= require_tree .
