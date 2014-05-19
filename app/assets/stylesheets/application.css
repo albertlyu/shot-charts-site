@@ -10,6 +10,5 @@
  *
  *= require_self
  *= require bootstrap
- *= require jquery-tablesorter/theme.black-ice
  *= require_tree .
  */

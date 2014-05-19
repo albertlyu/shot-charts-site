@@ -19,6 +19,6 @@
 //= require highcharts/highcharts-more
 $(document).ready(function(){
 	$('table').tablesorter();
-	$('thead').tooltip();
+	$('a').tooltip();
 });
 //= require_tree .

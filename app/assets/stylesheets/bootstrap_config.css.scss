@@ -1,1 +1,8 @@
 @import "bootstrap";
+
+@media screen and (max-width: 991px) {
+	.table-responsive
+	{
+	    overflow-x: scroll;
+	}
+}

@@ -1,24 +1,42 @@
 <div class="table-responsive">
     <table class="table table-striped table-bordered">
-      <tr>
-        <th>At Rim FG%</th>
-        <th>2-9 ft FG%</th>
-        <th>9-15 ft FG%</th>
-        <th>15-21 ft FG%</th>
-        <th>3FG%</th>
-        <th>Paint FG%</th>
-        <th>Non-Paint 2pt FG%</th>
-      </tr>
-      <tr>
-        <% @player_shot_stats.each do |stat| %>
-        <td><%= '%.3f' % stat.atrimfgpct %></td>
-        <td><%= '%.3f' % stat.shortfgpct %></td>
-        <td><%= '%.3f' % stat.midfgpct %></td>
-        <td><%= '%.3f' % stat.longfgpct %></td>
-        <td><%= '%.3f' % stat.threefgpct %></td>
-        <td><%= '%.3f' % stat.inthepaintfgpct %></td>
-        <td><%= '%.3f' % stat.outsidethepaintfgpct %></td>
-        <% end %>
-      </tr>
+        <thead>
+            <tr>
+                <th class="text-center" colspan="3"><a data-toggle="tooltip" data-placement="top" title="FGM/FGA at rim (layups and dunks)">At Rim</a></th>
+                <th class="text-center" colspan="3"><a data-toggle="tooltip" data-placement="top" title="FGM/FGA from 2-9 feet out">Short</a></th>
+                <th class="text-center" colspan="3"><a data-toggle="tooltip" data-placement="top" title="FGM/FGA from 9-15 feet out">Mid</a></th>
+                <th class="text-center" colspan="3"><a data-toggle="tooltip" data-placement="top" title="FGM/FGA from 15-21 feet out">Long</a></th>
+                <th class="text-center" colspan="3"><a data-toggle="tooltip" data-placement="top" title="FGM/FGA from 3-point range">3FG%</a></th>
+                <th class="text-center" colspan="3"><a data-toggle="tooltip" data-placement="top" title="FGM/FGA from inside the paint">Paint</a></th>
+                <th class="text-center" colspan="3"><a data-toggle="tooltip" data-placement="top" title="2-pt FGM/FGA from outside the paint">Non-Paint</a></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <% @player_shot_stats.each do |stat| %>
+                <td class="text-center"><%= stat.atrimmade %></td>
+                <td class="text-center"><%= stat.atrimatt %></td>
+                <td class="text-center"><%= '%.3f' % stat.atrimfgpct %></td>
+                <td class="text-center"><%= stat.shortmade %></td>
+                <td class="text-center"><%= stat.shortatt %></td>
+                <td class="text-center"><%= '%.3f' % stat.shortfgpct %></td>
+                <td class="text-center"><%= stat.midmade %></td>
+                <td class="text-center"><%= stat.midatt %></td>
+                <td class="text-center"><%= '%.3f' % stat.midfgpct %></td>
+                <td class="text-center"><%= stat.longmade %></td>
+                <td class="text-center"><%= stat.longatt %></td>
+                <td class="text-center"><%= '%.3f' % stat.longfgpct %></td>
+                <td class="text-center"><%= stat.threemade %></td>
+                <td class="text-center"><%= stat.threeatt %></td>
+                <td class="text-center"><%= '%.3f' % stat.threefgpct %></td>
+                <td class="text-center"><%= stat.inthepaintmade %></td>
+                <td class="text-center"><%= stat.inthepaintatt %></td>
+                <td class="text-center"><%= '%.3f' % stat.inthepaintfgpct %></td>
+                <td class="text-center"><%= stat.outsidethepaintmade %></td>
+                <td class="text-center"><%= stat.outsidethepaintatt %></td>
+                <td class="text-center"><%= '%.3f' % stat.outsidethepaintfgpct %></td>
+                <% end %>
+            </tr>
+        </tbody>
     </table>
 </div>
