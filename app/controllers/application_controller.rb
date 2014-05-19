@@ -47,8 +47,4 @@ class ApplicationController < ActionController::Base
     @home = Team.find_by(team_id: @game.home_team_id)
     @away = Team.find_by(team_id: @game.away_team_id)
   end
-
-  def google
-    render 'google62abd0c928ef84c9.html'
-  end
 end
