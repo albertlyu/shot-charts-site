@@ -5,6 +5,7 @@ ShotCharts::Application.routes.draw do
   get '/draft' => 'application#draft'
   get '/teams' => 'application#teams'
   get '/players' => 'application#players'
+  get '/about' => 'application#about'
 
   get '/conf/:team_conf' => 'application#conf'
   get '/teams/:id' => 'application#team'
