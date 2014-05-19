@@ -132,4 +132,4 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.3.0)
   underscore-rails (~> 1.6.0)
-  unicorn
+  unicorn (~> 0.991.0)

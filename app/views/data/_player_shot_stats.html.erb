@@ -1,23 +1,24 @@
-<!--add an if statement here for divide by zero cases-->
-<table class="table table-striped table-bordered">
-  <tr>
-    <th>At Rim FG%</th>
-    <th>2-9 ft FG%</th>
-    <th>9-15 ft FG%</th>
-    <th>15-21 ft FG%</th>
-    <th>3FG%</th>
-    <th>Paint FG%</th>
-    <th>Non-Paint 2pt FG%</th>
-  </tr>
-  <tr>
-    <% @player_shot_stats.each do |stat| %>
-    <td><%= '%.3f' % stat.atrimfgpct %></td>
-    <td><%= '%.3f' % stat.shortfgpct %></td>
-    <td><%= '%.3f' % stat.midfgpct %></td>
-    <td><%= '%.3f' % stat.longfgpct %></td>
-    <td><%= '%.3f' % stat.threefgpct %></td>
-    <td><%= '%.3f' % stat.inthepaintfgpct %></td>
-    <td><%= '%.3f' % stat.outsidethepaintfgpct %></td>
-    <% end %>
-  </tr>
-</table>
+<div class="table-responsive">
+    <table class="table table-striped table-bordered">
+      <tr>
+        <th>At Rim FG%</th>
+        <th>2-9 ft FG%</th>
+        <th>9-15 ft FG%</th>
+        <th>15-21 ft FG%</th>
+        <th>3FG%</th>
+        <th>Paint FG%</th>
+        <th>Non-Paint 2pt FG%</th>
+      </tr>
+      <tr>
+        <% @player_shot_stats.each do |stat| %>
+        <td><%= '%.3f' % stat.atrimfgpct %></td>
+        <td><%= '%.3f' % stat.shortfgpct %></td>
+        <td><%= '%.3f' % stat.midfgpct %></td>
+        <td><%= '%.3f' % stat.longfgpct %></td>
+        <td><%= '%.3f' % stat.threefgpct %></td>
+        <td><%= '%.3f' % stat.inthepaintfgpct %></td>
+        <td><%= '%.3f' % stat.outsidethepaintfgpct %></td>
+        <% end %>
+      </tr>
+    </table>
+</div>

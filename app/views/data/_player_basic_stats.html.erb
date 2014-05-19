@@ -1,33 +1,34 @@
-<!--add an if statement here for divide by zero cases-->
-<table class="table table-striped table-bordered">
-  <tr>
-    <th>Pts/Gm</th>
-    <th>Reb/Gm</th>
-    <th>Ast/Gm</th>
-    <th>Stl/Gm</th>
-    <th>Blk/Gm</th>
-    <th>FG%</th>
-    <th>FT%</th>
-    <th>3FG%</th>
-    <th>eFG%</th>
-    <th>Pts/40</th>
-    <th>Reb/40</th>
-    <th>Ast/40</th>
-  </tr>
-  <tr>
-    <% @player_basic_stats.each do |stat| %>
-    <td><%= '%.1f' % stat.ppg %></td>
-    <td><%= '%.1f' % stat.rpg %></td>
-    <td><%= '%.1f' % stat.apg %></td>
-    <td><%= '%.1f' % stat.spg %></td>
-    <td><%= '%.1f' % stat.bpg %></td>
-    <td><%= '%.3f' % stat.fgpct %></td>
-    <td><%= '%.3f' % stat.ftpct %></td>
-    <td><%= '%.3f' % stat.threefgpct %></td>
-    <td><%= '%.3f' % stat.efgpct %></td>
-    <td><%= '%.1f' % stat.pp40 %></td>
-    <td><%= '%.1f' % stat.rp40 %></td>
-    <td><%= '%.1f' % stat.ap40 %></td>
-    <% end %>
-  </tr>
-</table>
+<div class="table-responsive">
+    <table class="table table-striped table-bordered">
+      <tr>
+        <th>Pts/Gm</th>
+        <th>Reb/Gm</th>
+        <th>Ast/Gm</th>
+        <th>Stl/Gm</th>
+        <th>Blk/Gm</th>
+        <th>FG%</th>
+        <th>FT%</th>
+        <th>3FG%</th>
+        <th>eFG%</th>
+        <th>Pts/40</th>
+        <th>Reb/40</th>
+        <th>Ast/40</th>
+      </tr>
+      <tr>
+        <% @player_basic_stats.each do |stat| %>
+        <td><%= '%.1f' % stat.ppg %></td>
+        <td><%= '%.1f' % stat.rpg %></td>
+        <td><%= '%.1f' % stat.apg %></td>
+        <td><%= '%.1f' % stat.spg %></td>
+        <td><%= '%.1f' % stat.bpg %></td>
+        <td><%= '%.3f' % stat.fgpct %></td>
+        <td><%= '%.3f' % stat.ftpct %></td>
+        <td><%= '%.3f' % stat.threefgpct %></td>
+        <td><%= '%.3f' % stat.efgpct %></td>
+        <td><%= '%.1f' % stat.pp40 %></td>
+        <td><%= '%.1f' % stat.rp40 %></td>
+        <td><%= '%.1f' % stat.ap40 %></td>
+        <% end %>
+      </tr>
+    </table>
+</div>

@@ -1,31 +1,166 @@
 <h3><strong>Draft 3.0 Top 50 Players</strong></h3>
-<h4>Point Guards</h4>
-<ul>
-  <% @pg.each do |player| %>
-  <li><a href="../players/<%= player.player_id %>"><%= player.player_first_name %> <%= player.player_last_name %>, <%= player.team.team_name %> <%= player.team.team_mascot %></a></li>
-  <% end %>
-</ul>
-<h4>Shooting Guards</h4>
-<ul>
-  <% @sg.each do |player| %>
-  <li><a href="../players/<%= player.player_id %>"><%= player.player_first_name %> <%= player.player_last_name %>, <%= player.team.team_name %> <%= player.team.team_mascot %></a></li>
-  <% end %>
-</ul>
-<h4>Small Forwards</h4>
-<ul>
-  <% @sf.each do |player| %>
-  <li><a href="../players/<%= player.player_id %>"><%= player.player_first_name %> <%= player.player_last_name %>, <%= player.team.team_name %> <%= player.team.team_mascot %></a></li>
-  <% end %>
-</ul>
-<h4>Power Forwards</h4>
-<ul>
-  <% @pf.each do |player| %>
-  <li><a href="../players/<%= player.player_id %>"><%= player.player_first_name %> <%= player.player_last_name %>, <%= player.team.team_name %> <%= player.team.team_mascot %></a></li>
-  <% end %>
-</ul>
-<h4>Centers</h4>
-<ul>
-  <% @c.each do |player| %>
-  <li><a href="../players/<%= player.player_id %>"><%= player.player_first_name %> <%= player.player_last_name %>, <%= player.team.team_name %> <%= player.team.team_mascot %></a></li>
-  <% end %>
-</ul>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered">
+    <tr>
+      <th>Point Guards</th>
+      <th>Team</th>
+      <th>PPG</th>
+      <th>RPG</th>
+      <th>APG</th>
+      <th>SPG</th>
+      <th>BPG</th>
+      <th>FG%</th>
+      <th>FT%</th>
+      <th>3FG%</th>
+      <th>eFG%</th>
+    </tr>
+    <% @pg_basic_stats.each do |stat| %>
+    <tr>
+      <td><a href="../players/<%= stat.player.player_id %>"><%= stat.player.player_first_name %> <%= stat.player.player_last_name %></a></td>
+      <td><a href="../teams/<%= stat.player.team_id %>"><%= stat.player.team.team_name %> <%= stat.player.team.team_mascot %></a></td>
+      <td><%= '%.1f' % stat.ppg %></td>
+      <td><%= '%.1f' % stat.rpg %></td>
+      <td><%= '%.1f' % stat.apg %></td>
+      <td><%= '%.1f' % stat.spg %></td>
+      <td><%= '%.1f' % stat.bpg %></td>
+      <td><%= '%.3f' % stat.fgpct %></td>
+      <td><%= '%.3f' % stat.ftpct %></td>
+      <td><%= '%.3f' % stat.threefgpct %></td>
+      <td><%= '%.3f' % stat.efgpct %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered">
+    <tr>
+      <th>Shooting Guards</th>
+      <th>Team</th>
+      <th>PPG</th>
+      <th>RPG</th>
+      <th>APG</th>
+      <th>SPG</th>
+      <th>BPG</th>
+      <th>FG%</th>
+      <th>FT%</th>
+      <th>3FG%</th>
+      <th>eFG%</th>
+    </tr>
+    <% @sg_basic_stats.each do |stat| %>
+    <tr>
+      <td><a href="../players/<%= stat.player.player_id %>"><%= stat.player.player_first_name %> <%= stat.player.player_last_name %></a></td>
+      <td><a href="../teams/<%= stat.player.team_id %>"><%= stat.player.team.team_name %> <%= stat.player.team.team_mascot %></a></td>
+      <td><%= '%.1f' % stat.ppg %></td>
+      <td><%= '%.1f' % stat.rpg %></td>
+      <td><%= '%.1f' % stat.apg %></td>
+      <td><%= '%.1f' % stat.spg %></td>
+      <td><%= '%.1f' % stat.bpg %></td>
+      <td><%= '%.3f' % stat.fgpct %></td>
+      <td><%= '%.3f' % stat.ftpct %></td>
+      <td><%= '%.3f' % stat.threefgpct %></td>
+      <td><%= '%.3f' % stat.efgpct %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered">
+    <tr>
+      <th>Small Forwards</th>
+      <th>Team</th>
+      <th>PPG</th>
+      <th>RPG</th>
+      <th>APG</th>
+      <th>SPG</th>
+      <th>BPG</th>
+      <th>FG%</th>
+      <th>FT%</th>
+      <th>3FG%</th>
+      <th>eFG%</th>
+    </tr>
+    <% @sf_basic_stats.each do |stat| %>
+    <tr>
+      <td><a href="../players/<%= stat.player.player_id %>"><%= stat.player.player_first_name %> <%= stat.player.player_last_name %></a></td>
+      <td><a href="../teams/<%= stat.player.team_id %>"><%= stat.player.team.team_name %> <%= stat.player.team.team_mascot %></a></td>
+      <td><%= '%.1f' % stat.ppg %></td>
+      <td><%= '%.1f' % stat.rpg %></td>
+      <td><%= '%.1f' % stat.apg %></td>
+      <td><%= '%.1f' % stat.spg %></td>
+      <td><%= '%.1f' % stat.bpg %></td>
+      <td><%= '%.3f' % stat.fgpct %></td>
+      <td><%= '%.3f' % stat.ftpct %></td>
+      <td><%= '%.3f' % stat.threefgpct %></td>
+      <td><%= '%.3f' % stat.efgpct %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered">
+    <tr>
+      <th>Power Forwards</th>
+      <th>Team</th>
+      <th>PPG</th>
+      <th>RPG</th>
+      <th>APG</th>
+      <th>SPG</th>
+      <th>BPG</th>
+      <th>FG%</th>
+      <th>FT%</th>
+      <th>3FG%</th>
+      <th>eFG%</th>
+    </tr>
+    <% @pf_basic_stats.each do |stat| %>
+    <tr>
+      <td><a href="../players/<%= stat.player.player_id %>"><%= stat.player.player_first_name %> <%= stat.player.player_last_name %></a></td>
+      <td><a href="../teams/<%= stat.player.team_id %>"><%= stat.player.team.team_name %> <%= stat.player.team.team_mascot %></a></td>
+      <td><%= '%.1f' % stat.ppg %></td>
+      <td><%= '%.1f' % stat.rpg %></td>
+      <td><%= '%.1f' % stat.apg %></td>
+      <td><%= '%.1f' % stat.spg %></td>
+      <td><%= '%.1f' % stat.bpg %></td>
+      <td><%= '%.3f' % stat.fgpct %></td>
+      <td><%= '%.3f' % stat.ftpct %></td>
+      <td><%= '%.3f' % stat.threefgpct %></td>
+      <td><%= '%.3f' % stat.efgpct %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered">
+    <tr>
+      <th>Centers</th>
+      <th>Team</th>
+      <th>PPG</th>
+      <th>RPG</th>
+      <th>APG</th>
+      <th>SPG</th>
+      <th>BPG</th>
+      <th>FG%</th>
+      <th>FT%</th>
+      <th>3FG%</th>
+      <th>eFG%</th>
+    </tr>
+    <% @c_basic_stats.each do |stat| %>
+    <tr>
+      <td><a href="../players/<%= stat.player.player_id %>"><%= stat.player.player_first_name %> <%= stat.player.player_last_name %></a></td>
+      <td><a href="../teams/<%= stat.player.team_id %>"><%= stat.player.team.team_name %> <%= stat.player.team.team_mascot %></a></td>
+      <td><%= '%.1f' % stat.ppg %></td>
+      <td><%= '%.1f' % stat.rpg %></td>
+      <td><%= '%.1f' % stat.apg %></td>
+      <td><%= '%.1f' % stat.spg %></td>
+      <td><%= '%.1f' % stat.bpg %></td>
+      <td><%= '%.3f' % stat.fgpct %></td>
+      <td><%= '%.3f' % stat.ftpct %></td>
+      <td><%= '%.3f' % stat.threefgpct %></td>
+      <td><%= '%.3f' % stat.efgpct %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
