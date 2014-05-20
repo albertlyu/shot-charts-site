@@ -1,0 +1,6 @@
+<h3><strong>NCAA Tournament 2014 Game Log</strong></h3>
+<ul>
+  <% @games.each do |game| %>
+  <li><a href="../games/<%= game.game_id %>"><%= game.date %>: <%= Team.find_by(team_id: game.home_team_id).team_name %> vs <%= Team.find_by(team_id: game.away_team_id).team_name %> at <%= game.venue_name %> </a></li>
+  <% end %>
+</ul>

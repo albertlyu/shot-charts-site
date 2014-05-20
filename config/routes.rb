@@ -3,6 +3,7 @@ ShotCharts::Application.routes.draw do
   get '/#' => 'home#index'
 
   get '/draft' => 'application#draft'
+  get '/tourney' => 'application#tourney'
   get '/teams' => 'application#teams'
   get '/players' => 'application#players'
   get '/about' => 'application#about'
