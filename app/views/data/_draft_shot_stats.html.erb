@@ -1,0 +1,164 @@
+<div class="table-responsive">
+  <table class="table tablesorter table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Point Guards</th>
+        <th>Team</th>
+        <th><a data-toggle="tooltip" data-placement="top" title="FG% at rim (layups and dunks)">At Rim</a></th>
+        <th><a data-toggle="tooltip" data-placement="top" title="FG% from 2-9 feet out">Short</a></th>
+        <th><a data-toggle="tooltip" data-placement="top" title="FG% from 9-15 feet out">Mid</a></th>
+        <th><a data-toggle="tooltip" data-placement="top" title="FG% from 15-21 feet out">Long</a></th>
+        <th><a data-toggle="tooltip" data-placement="top" title="FG% from 3-point range">3FG%</a></th>
+        <th><a data-toggle="tooltip" data-placement="top" title="FG% from inside the paint">Paint</a></th>
+        <th><a data-toggle="tooltip" data-placement="top" title="2-pt FG% from outside the paint">Non-Paint</a></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @pg_shot_stats.each do |stat| %>
+      <tr>
+        <td><strong><a href="../players/<%= stat.player.player_id %>"><%= stat.player.player_first_name %> <%= stat.player.player_last_name %></a></strong></td>
+        <td><a href="../teams/<%= stat.player.team_id %>"><%= stat.player.team.team_name %> <%= stat.player.team.team_mascot %></a></td>
+        <td><%= '%.3f' % stat.atrimfgpct %></td>
+        <td><%= '%.3f' % stat.shortfgpct %></td>
+        <td><%= '%.3f' % stat.midfgpct %></td>
+        <td><%= '%.3f' % stat.longfgpct %></td>
+        <td><%= '%.3f' % stat.threefgpct %></td>
+        <td><%= '%.3f' % stat.inthepaintfgpct %></td>
+        <td><%= '%.3f' % stat.outsidethepaintfgpct %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="table-responsive">
+  <table id="drafttable" class="table tablesorter table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Shooting Guards</th>
+        <th>Team</th>
+        <th><a data-toggle="tooltip" data-placement="top" title="FG% at rim (layups and dunks)">At Rim</a></th>
+        <th><a data-toggle="tooltip" data-placement="top" title="FG% from 2-9 feet out">Short</a></th>
+        <th><a data-toggle="tooltip" data-placement="top" title="FG% from 9-15 feet out">Mid</a></th>
+        <th><a data-toggle="tooltip" data-placement="top" title="FG% from 15-21 feet out">Long</a></th>
+        <th><a data-toggle="tooltip" data-placement="top" title="FG% from 3-point range">3FG%</a></th>
+        <th><a data-toggle="tooltip" data-placement="top" title="FG% from inside the paint">Paint</a></th>
+        <th><a data-toggle="tooltip" data-placement="top" title="2-pt FG% from outside the paint">Non-Paint</a></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @sg_shot_stats.each do |stat| %>
+      <tr>
+        <td><strong><a href="../players/<%= stat.player.player_id %>"><%= stat.player.player_first_name %> <%= stat.player.player_last_name %></a></strong></td>
+        <td><a href="../teams/<%= stat.player.team_id %>"><%= stat.player.team.team_name %> <%= stat.player.team.team_mascot %></a></td>
+        <td><%= '%.3f' % stat.atrimfgpct %></td>
+        <td><%= '%.3f' % stat.shortfgpct %></td>
+        <td><%= '%.3f' % stat.midfgpct %></td>
+        <td><%= '%.3f' % stat.longfgpct %></td>
+        <td><%= '%.3f' % stat.threefgpct %></td>
+        <td><%= '%.3f' % stat.inthepaintfgpct %></td>
+        <td><%= '%.3f' % stat.outsidethepaintfgpct %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="table-responsive">
+  <table id="drafttable" class="table tablesorter table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Small Forwards</th>
+        <th>Team</th>
+        <th><a data-toggle="tooltip" data-placement="top" title="FG% at rim (layups and dunks)">At Rim</a></th>
+        <th><a data-toggle="tooltip" data-placement="top" title="FG% from 2-9 feet out">Short</a></th>
+        <th><a data-toggle="tooltip" data-placement="top" title="FG% from 9-15 feet out">Mid</a></th>
+        <th><a data-toggle="tooltip" data-placement="top" title="FG% from 15-21 feet out">Long</a></th>
+        <th><a data-toggle="tooltip" data-placement="top" title="FG% from 3-point range">3FG%</a></th>
+        <th><a data-toggle="tooltip" data-placement="top" title="FG% from inside the paint">Paint</a></th>
+        <th><a data-toggle="tooltip" data-placement="top" title="2-pt FG% from outside the paint">Non-Paint</a></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @sf_shot_stats.each do |stat| %>
+      <tr>
+        <td><strong><a href="../players/<%= stat.player.player_id %>"><%= stat.player.player_first_name %> <%= stat.player.player_last_name %></a></strong></td>
+        <td><a href="../teams/<%= stat.player.team_id %>"><%= stat.player.team.team_name %> <%= stat.player.team.team_mascot %></a></td>
+        <td><%= '%.3f' % stat.atrimfgpct %></td>
+        <td><%= '%.3f' % stat.shortfgpct %></td>
+        <td><%= '%.3f' % stat.midfgpct %></td>
+        <td><%= '%.3f' % stat.longfgpct %></td>
+        <td><%= '%.3f' % stat.threefgpct %></td>
+        <td><%= '%.3f' % stat.inthepaintfgpct %></td>
+        <td><%= '%.3f' % stat.outsidethepaintfgpct %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="table-responsive">
+  <table id="drafttable" class="table tablesorter table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Power Forwards</th>
+        <th>Team</th>
+        <th><a data-toggle="tooltip" data-placement="top" title="FG% at rim (layups and dunks)">At Rim</a></th>
+        <th><a data-toggle="tooltip" data-placement="top" title="FG% from 2-9 feet out">Short</a></th>
+        <th><a data-toggle="tooltip" data-placement="top" title="FG% from 9-15 feet out">Mid</a></th>
+        <th><a data-toggle="tooltip" data-placement="top" title="FG% from 15-21 feet out">Long</a></th>
+        <th><a data-toggle="tooltip" data-placement="top" title="FG% from 3-point range">3FG%</a></th>
+        <th><a data-toggle="tooltip" data-placement="top" title="FG% from inside the paint">Paint</a></th>
+        <th><a data-toggle="tooltip" data-placement="top" title="2-pt FG% from outside the paint">Non-Paint</a></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @pf_shot_stats.each do |stat| %>
+      <tr>
+        <td><strong><a href="../players/<%= stat.player.player_id %>"><%= stat.player.player_first_name %> <%= stat.player.player_last_name %></a></strong></td>
+        <td><a href="../teams/<%= stat.player.team_id %>"><%= stat.player.team.team_name %> <%= stat.player.team.team_mascot %></a></td>
+        <td><%= '%.3f' % stat.atrimfgpct %></td>
+        <td><%= '%.3f' % stat.shortfgpct %></td>
+        <td><%= '%.3f' % stat.midfgpct %></td>
+        <td><%= '%.3f' % stat.longfgpct %></td>
+        <td><%= '%.3f' % stat.threefgpct %></td>
+        <td><%= '%.3f' % stat.inthepaintfgpct %></td>
+        <td><%= '%.3f' % stat.outsidethepaintfgpct %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="table-responsive">
+  <table id="drafttable" class="table tablesorter table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Centers</th>
+        <th>Team</th>
+        <th><a data-toggle="tooltip" data-placement="top" title="FG% at rim (layups and dunks)">At Rim</a></th>
+        <th><a data-toggle="tooltip" data-placement="top" title="FG% from 2-9 feet out">Short</a></th>
+        <th><a data-toggle="tooltip" data-placement="top" title="FG% from 9-15 feet out">Mid</a></th>
+        <th><a data-toggle="tooltip" data-placement="top" title="FG% from 15-21 feet out">Long</a></th>
+        <th><a data-toggle="tooltip" data-placement="top" title="FG% from 3-point range">3FG%</a></th>
+        <th><a data-toggle="tooltip" data-placement="top" title="FG% from inside the paint">Paint</a></th>
+        <th><a data-toggle="tooltip" data-placement="top" title="2-pt FG% from outside the paint">Non-Paint</a></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @c_shot_stats.each do |stat| %>
+      <tr>
+        <td><strong><a href="../players/<%= stat.player.player_id %>"><%= stat.player.player_first_name %> <%= stat.player.player_last_name %></a></strong></td>
+        <td><a href="../teams/<%= stat.player.team_id %>"><%= stat.player.team.team_name %> <%= stat.player.team.team_mascot %></a></td>
+        <td><%= '%.3f' % stat.atrimfgpct %></td>
+        <td><%= '%.3f' % stat.shortfgpct %></td>
+        <td><%= '%.3f' % stat.midfgpct %></td>
+        <td><%= '%.3f' % stat.longfgpct %></td>
+        <td><%= '%.3f' % stat.threefgpct %></td>
+        <td><%= '%.3f' % stat.inthepaintfgpct %></td>
+        <td><%= '%.3f' % stat.outsidethepaintfgpct %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
