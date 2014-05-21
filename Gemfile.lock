@@ -57,6 +57,8 @@ GEM
     mime-types (1.25.1)
     minitest (4.7.5)
     multi_json (1.10.0)
+    newrelic_rpm (3.8.1.221)
+    pg (0.17.1)
     pg (0.17.1-x64-mingw32)
     polyglot (0.3.4)
     rack (1.5.2)
@@ -127,6 +129,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails (~> 3.0.4)
   jquery-tablesorter (~> 1.11.2)
+  newrelic_rpm
   pg
   rails (= 4.0.0)
   rails_12factor

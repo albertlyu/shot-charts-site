@@ -57,6 +57,9 @@ gem 'rails_12factor', group: :production
 # Use unicorn as the app server
 gem 'unicorn', '~> 0.991.0'
 
+# New Relic, to monitor application's performance
+gem 'newrelic_rpm'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
