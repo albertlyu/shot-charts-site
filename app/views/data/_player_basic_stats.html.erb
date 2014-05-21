@@ -9,7 +9,7 @@
                 <th class="text-center"><a data-toggle="tooltip" data-placement="top" title="Blocks per game">BPG</a></th>
                 <th class="text-center"><a data-toggle="tooltip" data-placement="top" title="Field goal percentage">FG%</a></th>
                 <th class="text-center"><a data-toggle="tooltip" data-placement="top" title="Free throw percentage">FT%</a></th>
-                <th class="text-center"><a data-toggle="tooltip" data-placement="top" title="3-point field goal percentage">3FG%</a></th>
+                <th class="text-center"><a data-toggle="tooltip" data-placement="top" title="3-point field goal percentage">3P%</a></th>
                 <th class="text-center"><a data-toggle="tooltip" data-placement="top" title="Effective field goal percentage">eFG%</a></th>
                 <th class="text-center"><a data-toggle="tooltip" data-placement="top" title="Points per 40 min">Pts/40</a></th>
                 <th class="text-center"><a data-toggle="tooltip" data-placement="top" title="Rebounds per 40 min">Reb/40</a></th>
@@ -17,22 +17,22 @@
             </tr>
         </thead>
         <tbody>
+            <% @player_basic_stats.each do |stat| %>
             <tr>
-                <% @player_basic_stats.each do |stat| %>
-                <td class="text-center"><%= '%.1f' % stat.ppg %></td>
-                <td class="text-center"><%= '%.1f' % stat.rpg %></td>
-                <td class="text-center"><%= '%.1f' % stat.apg %></td>
-                <td class="text-center"><%= '%.1f' % stat.spg %></td>
-                <td class="text-center"><%= '%.1f' % stat.bpg %></td>
-                <td class="text-center"><%= '%.3f' % stat.fgpct %></td>
-                <td class="text-center"><%= '%.3f' % stat.ftpct %></td>
-                <td class="text-center"><%= '%.3f' % stat.threefgpct %></td>
-                <td class="text-center"><%= '%.3f' % stat.efgpct %></td>
-                <td class="text-center"><%= '%.1f' % stat.pp40 %></td>
-                <td class="text-center"><%= '%.1f' % stat.rp40 %></td>
-                <td class="text-center"><%= '%.1f' % stat.ap40 %></td>
-                <% end %>
+                <td class="text-center"><%= '%.1f' % stat.ppg.to_f %></td>
+                <td class="text-center"><%= '%.1f' % stat.rpg.to_f %></td>
+                <td class="text-center"><%= '%.1f' % stat.apg.to_f %></td>
+                <td class="text-center"><%= '%.1f' % stat.spg.to_f %></td>
+                <td class="text-center"><%= '%.1f' % stat.bpg.to_f %></td>
+                <td class="text-center"><%= '%.3f' % stat.fgpct.to_f %></td>
+                <td class="text-center"><%= '%.3f' % stat.ftpct.to_f %></td>
+                <td class="text-center"><%= '%.3f' % stat.threefgpct.to_f %></td>
+                <td class="text-center"><%= '%.3f' % stat.efgpct.to_f %></td>
+                <td class="text-center"><%= '%.1f' % stat.pp40.to_f %></td>
+                <td class="text-center"><%= '%.1f' % stat.rp40.to_f %></td>
+                <td class="text-center"><%= '%.1f' % stat.ap40.to_f %></td>
             </tr>
+            <% end %>
         </tbody>
     </table>
 </div>

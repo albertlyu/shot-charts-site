@@ -1,5 +1,5 @@
 <% @shots = @plays.where("x_coord IS NOT NULL").to_json.html_safe %>
-<% if @shots != "[]" %>
+<% unless @shots.nil? || @shots == "[]" %>
 <div class="panel panel-default" style="width:700px">
   <div class="panel-heading">Shot Chart</div>
   <div id="shotchart"></div>

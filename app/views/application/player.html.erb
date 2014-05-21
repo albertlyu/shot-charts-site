@@ -5,8 +5,4 @@
 <%= render "data/player_shot_stats" %>
 
 <h4>Game Log</h4>
-<ul>
-  <% @playergames.each do |playergame| %>
-  <li><a href="../games/<%= playergame.game_id %>"><%= playergame.game_id %></a></li>
-  <% end %>
-</ul>
+<%= render "data/player_game_log" %>

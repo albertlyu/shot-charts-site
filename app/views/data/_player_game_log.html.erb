@@ -1,0 +1,54 @@
+<div class="table-responsive">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th class="text-center"><a data-toggle="tooltip" data-placement="top" title="Date">Date</a></th>
+                <th class="text-center"><a data-toggle="tooltip" data-placement="top" title="Opponent">Opponent</a></th>
+                <th class="text-center"><a data-toggle="tooltip" data-placement="top" title="Minutes">Min</a></th>
+                <th class="text-center"><a data-toggle="tooltip" data-placement="top" title="Field goals made-attempted">FGM-FGA</a></th>
+                <th class="text-center"><a data-toggle="tooltip" data-placement="top" title="Field goal percentage">FG%</a></th>
+                <th class="text-center"><a data-toggle="tooltip" data-placement="top" title="3-point field goals made-attempted">3PM-3PA</a></th>
+                <th class="text-center"><a data-toggle="tooltip" data-placement="top" title="3-point field goal percentage">3P%</a></th>
+                <th class="text-center"><a data-toggle="tooltip" data-placement="top" title="Free throws made-attempted">FTM-FTA</a></th>
+                <th class="text-center"><a data-toggle="tooltip" data-placement="top" title="Free Throw percentage">FT%</a></th>
+                <th class="text-center"><a data-toggle="tooltip" data-placement="top" title="Points">Pts</a></th>
+                <th class="text-center"><a data-toggle="tooltip" data-placement="top" title="Rebounds">Reb</a></th>
+                <th class="text-center"><a data-toggle="tooltip" data-placement="top" title="Assists">Ast</a></th>
+                <th class="text-center"><a data-toggle="tooltip" data-placement="top" title="Steals">Stl</a></th>
+                <th class="text-center"><a data-toggle="tooltip" data-placement="top" title="Blocked shots">Blk</a></th>
+                <th class="text-center"><a data-toggle="tooltip" data-placement="top" title="Turnovers">TO</a></th>
+                <th class="text-center"><a data-toggle="tooltip" data-placement="top" title="Personal fouls">PF</a></th>
+            </tr>
+        </thead>
+        <tbody>
+        <% @player.player_games.each do |player_game| %>
+            <% game = Game.find_by(game_id: player_game.game_id) %>
+            <% unless game.nil? || game == "[]" %>
+                <% if player_game.team_id != game.home_team_id %>
+                    <% opp = Team.find_by(team_id: game.home_team_id) %>
+                <% else %>
+                    <% opp = Team.find_by(team_id: game.away_team_id) %>
+                <% end %>
+                <tr>
+                    <td class="text-center"><a href="../games/<%= game.game_id %>"><%= game.date %></a></td>
+                    <td class="text-center"><a href="../teams/<%= opp.team_id %>"><%= opp.team_name %> <%= opp.team_mascot %></a></td>
+                    <td class="text-center"><%= player_game.minutes %></td>
+                    <td class="text-center"><%= player_game.field_goals_made %>-<%= player_game.field_goals_att %></td>
+                    <td class="text-center"><%= '%.3f' % player_game.field_goals_pct.to_f %></td>
+                    <td class="text-center"><%= player_game.three_point_field_goals_made %>-<%= player_game.three_point_field_goals_att %></td>
+                    <td class="text-center"><%= '%.3f' % player_game.three_point_field_goals_pct.to_f %></td>
+                    <td class="text-center"><%= player_game.free_throws_made %>-<%= player_game.free_throws_att %></td>
+                    <td class="text-center"><%= '%.3f' % player_game.free_throws_pct.to_f %></td>
+                    <td class="text-center"><%= player_game.points %></td>
+                    <td class="text-center"><%= player_game.rebounds_total %></td>
+                    <td class="text-center"><%= player_game.assists %></td>
+                    <td class="text-center"><%= player_game.steals %></td>
+                    <td class="text-center"><%= player_game.blocked_shots %></td>
+                    <td class="text-center"><%= player_game.turnovers %></td>
+                    <td class="text-center"><%= player_game.personal_fouls %></td>
+                </tr>
+            <% end %>
+        <% end %>
+        </tbody>
+    </table>
+</div>
