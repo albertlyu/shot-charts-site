@@ -8,7 +8,6 @@
 }
 </style>
 
-<%= javascript_include_tag "heatmap" %>
 <% @shots = @plays.where("x_coord IS NOT NULL") %>
 <% unless @shots.nil? || @shots == "[]" %>
 <div class="panel panel-default" style="width:700px">
