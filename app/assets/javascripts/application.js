@@ -17,6 +17,7 @@
 //= require underscore
 //= require highcharts
 //= require highcharts/highcharts-more
+//= require heatmap
 $(document).ready(function(){
 	$('table').tablesorter();
 	$('a').tooltip();
