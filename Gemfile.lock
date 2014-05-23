@@ -58,7 +58,6 @@ GEM
     minitest (4.7.5)
     multi_json (1.10.0)
     newrelic_rpm (3.8.1.221)
-    pg (0.17.1)
     pg (0.17.1-x64-mingw32)
     polyglot (0.3.4)
     rack (1.5.2)

@@ -1,7 +1,6 @@
 <% @shots = @plays.where("x_coord IS NOT NULL").to_json.html_safe %>
 <% unless @shots.nil? || @shots == "[]" %>
 <div class="panel panel-default" style="width:700px">
-  <div class="panel-heading">Shot Chart</div>
   <div id="shotchart"></div>
   <%= javascript_tag do %>
     var shots = <%= @shots %>;
@@ -88,7 +87,7 @@
 	                    });
 	                });
 	                
-	                console.log(madeArray);
+	                //console.log(madeArray);
 	                return madeArray;
 	            })()
 	        }, {
@@ -105,7 +104,7 @@
 	                    });
 	                });
 	                
-	                console.log(missArray);
+	                //console.log(missArray);
 	                return missArray;
 	            })()
 	        }],
