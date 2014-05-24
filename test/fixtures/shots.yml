@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  play_id: 1
+  player_id: 1
+  team_id: 1
+  game_id: 1
+  half: 1
+  points_type: 1
+  detail_id: 1
+  zone_id: 1
+  distance: 1
+  x_coord: 1.5
+  y_coord: 1.5
+  made: false
+
+two:
+  play_id: 1
+  player_id: 1
+  team_id: 1
+  game_id: 1
+  half: 1
+  points_type: 1
+  detail_id: 1
+  zone_id: 1
+  distance: 1
+  x_coord: 1.5
+  y_coord: 1.5
+  made: false

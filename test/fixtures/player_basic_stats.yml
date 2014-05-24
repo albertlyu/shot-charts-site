@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  player_id: 1
+  team_id: 1
+  games_played: 1
+  sum_field_goals_att: 1
+  points_per_game: 1.5
+  rebounds_per_game: 1.5
+  assists_per_game: 1.5
+  steals_per_game: 1.5
+  blocks_per_game: 1.5
+  turnovers_per_game: 1.5
+  minutes_per_game: 1.5
+  field_goals_pct: 1.5
+  free_throws_pct: 1.5
+  three_point_field_goals_pct: 1.5
+  effective_field_goals_pct: 1.5
+
+two:
+  player_id: 1
+  team_id: 1
+  games_played: 1
+  sum_field_goals_att: 1
+  points_per_game: 1.5
+  rebounds_per_game: 1.5
+  assists_per_game: 1.5
+  steals_per_game: 1.5
+  blocks_per_game: 1.5
+  turnovers_per_game: 1.5
+  minutes_per_game: 1.5
+  field_goals_pct: 1.5
+  free_throws_pct: 1.5
+  three_point_field_goals_pct: 1.5
+  effective_field_goals_pct: 1.5
