@@ -43,12 +43,6 @@ class ApplicationController < ActionController::Base
   def player
     @player = Player.find_by(player_id: params['id'])
     @shots = Shot.where("player_id = ?", params['id']).order("id ASC")
-    @player_shot_stats = PlayerShotStat.where("player_id = ?", params['id']).group(:player_id)
-  end
-
-  def player_stats
-    @player = Player.find_by(player_id: params['id'])
-    #@shots = Shot.where("player_id = ?", params['id']).order("id ASC")
     @player_basic_stats = PlayerBasicStat.where("player_id = ?", params['id']).group(:player_id)
     @player_shot_stats = PlayerShotStat.where("player_id = ?", params['id']).group(:player_id)
   end

@@ -1,12 +1,15 @@
-<h4><strong><%= @player.player_first_name %> <%= @player.player_last_name %></strong> (<a href="../teams/<%= @player.team_id %>"><%= @player.team.team_name %> <%= @player.team.team_mascot %></a>) - <a href="/players/<%= @player.player_id %>/stats">Stats</a></h4>
+<h4><strong><%= @player.player_first_name %> <%= @player.player_last_name %></strong> (<a href="../teams/<%= @player.team_id %>"><%= @player.team.team_name %> <%= @player.team.team_mascot %></a>)</h4>
 
 <ul class="nav nav-tabs" style="width:700px">
-  <li class="active"><a href="#charts" data-toggle="tab">Shot Charts</a></li>
+  <li class="active"><a href="#heat_chart" data-toggle="tab">Shot Heatmap</a></li>
+  <li><a href="#scatter_chart" data-toggle="tab">Shot Chart</a></li>
   <li><a href="#stacked_bar" data-toggle="tab">Shot Distributions</a></li>
 </ul>
 <div class="tab-content">
-  <div class="tab-pane active" id="charts">
+  <div class="tab-pane active" id="heat_chart">
   	<%= render "charts/heat_chart" %>
+  </div>
+  <div class="tab-pane" id="scatter_chart">
   	<%= render "charts/scatter_chart" %>
   </div>
   <div class="tab-pane" id="stacked_bar">
@@ -17,3 +20,8 @@
   	<%= render "charts/stacked_bar_type" %>
   </div>
 </div>
+<%= render "data/player_basic_stats" %>
+<%= render "data/player_shot_stats" %>
+
+<h4>Game Log</h4>
+<%= render "data/player_game_log" %>
