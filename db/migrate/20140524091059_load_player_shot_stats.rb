@@ -153,7 +153,7 @@ class LoadPlayerShotStats < ActiveRecord::Migration
 			, SUM(CASE WHEN shots.distance > 8 AND shots.distance <= 14 THEN 1 ELSE 0 END)::float/COUNT(DISTINCT shots.id)::float AS mid_pct_att
 			, CASE WHEN SUM(CASE WHEN shots.distance > 8 AND shots.distance <= 14 THEN 1 ELSE 0 END)::float = 0 THEN 0 ELSE SUM(CASE WHEN shots.distance > 8 AND shots.distance <= 14 AND shots.made = TRUE THEN 1 ELSE 0 END)::float/SUM(CASE WHEN shots.distance > 8 AND shots.distance <= 14 THEN 1 ELSE 0 END)::float END AS mid_pct_made
 			
-			, SUM(CASE WHEN shots.distance > 14 AND shots.distance < 20.75 THEN 1 ELSE 0 END) AS long_att
+			, SUM(CASE WHEN shots.distance > 0 AND shots.distance <= 8 THEN 1 ELSE 0 END) AS long_att
 			, SUM(CASE WHEN shots.distance > 0 AND shots.distance <= 8 AND shots.made = TRUE THEN 1 ELSE 0 END) AS long_made
 			, SUM(CASE WHEN shots.distance > 0 AND shots.distance <= 8 THEN 1 ELSE 0 END)::float/COUNT(DISTINCT shots.id)::float AS long_pct_att
 			, CASE WHEN SUM(CASE WHEN shots.distance > 0 AND shots.distance <= 8 THEN 1 ELSE 0 END)::float = 0 THEN 0 ELSE SUM(CASE WHEN shots.distance > 0 AND shots.distance <= 8 AND shots.made = TRUE THEN 1 ELSE 0 END)::float/SUM(CASE WHEN shots.distance > 0 AND shots.distance <= 8 THEN 1 ELSE 0 END)::float END AS long_pct_made
