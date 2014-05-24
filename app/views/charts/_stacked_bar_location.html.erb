@@ -22,10 +22,11 @@
 	    $('#stacked_bar_location').highcharts({
 	        chart: {
 	            type: 'bar',
-	            height: 200
+	            height: 200,
+	            width: 698
 	       },
 	        title: {
-	            text: 'Shot location distribution'
+	            text: 'All Zones'
 	        },
 	        xAxis: {
 	            categories: ['Attempts', 'Shots Made']
@@ -38,11 +39,14 @@
 	            max: shots_att,
 	            tickWidth: 1,
 	            gridLineWidth: 0,
-	            lineWidth: 1
+	            lineWidth: 1,
+	            reversed: true
 	        },
 	        legend: {
-	            layout: 'horizontal',
-	            verticalAlign: 'bottom',
+	            layout: 'vertical',
+	            align: 'right',
+	            verticalAlign: 'middle',
+	            width: 175,
 	            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF',
 	            borderWidth: 1
 	        },
@@ -53,15 +57,19 @@
 	        },
             series: [{
                 name: 'Threes',
+                color: '#04819E',
                 data: [threes_att, threes_made]
             }, {
                 name: 'Outside-The-Paint 2s',
+                color: '#00B25C',
                 data: [outside_the_paint_att, outside_the_paint_made]
             }, {
                 name: 'In-The-Paint 2s',
+                color: '#FF4900',
                 data: [in_the_paint_att, in_the_paint_made]
             }, {
                 name: 'At-Rim',
+                color: '#A65600',
                 data: [at_rim_att, at_rim_made]
             }],
 	        tooltip: {

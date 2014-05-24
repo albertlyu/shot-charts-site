@@ -5,12 +5,16 @@
 	  <%= javascript_tag do %>
 
 	    var shots_att = <%= stat.shots_att %>
-	    var baseline_2_att = <%= stat.baseline_2_att %>;
-	    var baseline_2_made = <%= stat.baseline_2_made %>;
-	    var wing_2_att = <%= stat.wing_2_att %>;
-	    var wing_2_made = <%= stat.wing_2_made %>;
+	    var right_baseline_2_att = <%= stat.right_baseline_2_att %>;
+	    var right_baseline_2_made = <%= stat.right_baseline_2_made %>;
+	    var right_wing_2_att = <%= stat.right_wing_2_att %>;
+	    var right_wing_2_made = <%= stat.right_wing_2_made %>;
 	    var straight_up_2_att = <%= stat.straight_up_2_att %>;
 	    var straight_up_2_made = <%= stat.straight_up_2_made %>;
+	    var left_wing_2_att = <%= stat.left_wing_2_att %>;
+	    var left_wing_2_made = <%= stat.left_wing_2_made %>;
+	    var left_baseline_2_att = <%= stat.left_baseline_2_att %>;
+	    var left_baseline_2_made = <%= stat.left_baseline_2_made %>;
 
 	  <% end %>
   <% end %>
@@ -20,10 +24,11 @@
 	    $('#stacked_bar_location_twos').highcharts({
 	        chart: {
 	            type: 'bar',
-	            height: 200
+	            height: 200,
+	            width: 698
 	       },
 	        title: {
-	            text: 'Shot location distribution (Outside The Paint)'
+	            text: 'Outside The Paint'
 	        },
 	        xAxis: {
 	            categories: ['Attempts', 'Shots Made']
@@ -36,11 +41,14 @@
 	            max: shots_att,
 	            tickWidth: 1,
 	            gridLineWidth: 0,
-	            lineWidth: 1
+	            lineWidth: 1,
+	            reversed: true
 	        },
 	        legend: {
-	            layout: 'horizontal',
-	            verticalAlign: 'bottom',
+	            layout: 'vertical',
+	            align: 'right',
+	            verticalAlign: 'middle',
+	            width: 175,
 	            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF',
 	            borderWidth: 1
 	        },
@@ -50,14 +58,25 @@
 	            }
 	        },
             series: [{
-                name: 'Baseline 2s',
-                data: [baseline_2_att, baseline_2_made]
+                name: 'Right Baseline 2s',
+                color: '#61D89F',
+                data: [right_baseline_2_att, right_baseline_2_made]
             }, {
-                name: 'Wing 2s',
-                data: [wing_2_att, wing_2_made]
+                name: 'Right Wing 2s',
+                color: '#00B25C',
+                data: [right_wing_2_att, right_wing_2_made]
             }, {
                 name: 'Straight-Up 2s',
+                color: '#00733C',
                 data: [straight_up_2_att, straight_up_2_made]
+            }, {
+                name: 'Left Wing 2s',
+                color: '#00B25C',
+                data: [left_wing_2_att, left_wing_2_made]
+            }, {
+                name: 'Left Baseline 2s',
+                color: '#61D89F',
+                data: [left_baseline_2_att, left_baseline_2_made]
             }],
 	        tooltip: {
                 pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',

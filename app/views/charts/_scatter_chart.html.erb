@@ -1,6 +1,6 @@
 <% unless @shots.nil? || @shots == "[]" %>
 <div class="panel panel-default" style="width:700px">
-  <div id="shotchart" align="center" style="padding-right:50px"></div>
+  <div id="scatter_chart" align="center" style="padding-right:25px"></div>
   <%= javascript_tag do %>
     var shots = <%= @shots.to_json.html_safe %>;
     var made = _.where(shots, {made: true});
@@ -11,9 +11,10 @@
 
   <script type="text/javascript">
 	$(function() {
-	    $('#shotchart').highcharts({
+	    $('#scatter_chart').highcharts({
 	        chart: {
 	            type: 'scatter',
+	            width: 650,
 	            plotBackgroundImage: 'http://dl.dropboxusercontent.com/s/lfd3doj34oa3b3c/court.png' 
 	       },
 	        title: {
@@ -21,8 +22,7 @@
 	        },
 	        xAxis: {
 	            title: {
-	                enabled: true,
-	                text: 'x'
+	                enabled: false
 	            },
 	            min: -30,
 	            max: 30,
@@ -33,7 +33,7 @@
 	        },
 	        yAxis: {
 	            title: {
-	                text: 'y'
+	                enabled: false
 	            },
 	            min: -1,
 	            max: 30,
