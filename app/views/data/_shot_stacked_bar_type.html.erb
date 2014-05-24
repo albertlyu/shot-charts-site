@@ -1,0 +1,80 @@
+<% unless @shots.nil? || @shots == "[]" %>
+<div class="panel panel-default" style="width:700px">
+  <div id="stacked_bar_type"></div>
+  <% @player_shot_stats.each do |stat| %>
+	  <%= javascript_tag do %>
+
+	    var shots_att = <%= stat.shots_att %>
+	    var jump_shots_att = <%= stat.jump_shots_att %>;
+	    var jump_shots_made = <%= stat.jump_shots_made %>;
+	    var hook_shots_att = <%= stat.hook_shots_att %>;
+	    var hook_shots_made = <%= stat.hook_shots_made %>;
+	    var tip_shots_att = <%= stat.tip_shots_att %>;
+	    var tip_shots_made = <%= stat.tip_shots_made %>;
+	    var layup_shots_att = <%= stat.layup_shots_att %>;
+	    var layup_shots_made = <%= stat.layup_shots_made %>;
+	    var dunk_shots_att = <%= stat.dunk_shots_att %>;
+	    var dunk_shots_made = <%= stat.dunk_shots_made %>;
+
+	  <% end %>
+  <% end %>
+
+  <script type="text/javascript">
+	$(function() {
+	    $('#stacked_bar_type').highcharts({
+	        chart: {
+	            type: 'bar',
+	            height: 200
+	       },
+	        title: {
+	            text: 'Shot type distribution'
+	        },
+	        xAxis: {
+	            categories: ['Attempts', 'Shots Made']
+	        },
+	        yAxis: {
+	            title: {
+	                text: ''
+	            },
+	            min: 0,
+	            max: shots_att,
+	            tickWidth: 1,
+	            gridLineWidth: 0,
+	            lineWidth: 1
+	        },
+	        legend: {
+	            layout: 'horizontal',
+	            verticalAlign: 'bottom',
+	            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF',
+	            borderWidth: 1
+	        },
+	        plotOptions: {
+	            bar: {
+	                stacking: 'normal'
+	            }
+	        },
+            series: [{
+                name: 'Jump Shot',
+                data: [jump_shots_att, jump_shots_made]
+            }, {
+                name: 'Hook Shot',
+                data: [hook_shots_att, hook_shots_made]
+            }, {
+                name: 'Tip Shot',
+                data: [tip_shots_att, tip_shots_made]
+            }, {
+                name: 'Layup Shot',
+                data: [layup_shots_att, layup_shots_made]
+            }, {
+                name: 'Dunk Shot',
+                data: [dunk_shots_att, dunk_shots_made]
+            }],
+	        tooltip: {
+                pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
+                shared: true
+            },
+	    });
+	});
+  </script>
+</div>
+<% end %>

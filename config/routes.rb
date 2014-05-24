@@ -11,6 +11,7 @@ ShotCharts::Application.routes.draw do
   get '/conf/:team_conf' => 'application#conf'
   get '/teams/:id' => 'application#team'
   get '/players/:id' => 'application#player'
+  get '/players/:id/stats' => 'application#player_stats'
   get '/games/:id' => 'application#game'
 
   resources :data

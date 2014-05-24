@@ -1,0 +1,75 @@
+<% unless @shots.nil? || @shots == "[]" %>
+<div class="panel panel-default" style="width:700px">
+  <div id="stacked_bar_location_paint"></div>
+  <% @player_shot_stats.each do |stat| %>
+	  <%= javascript_tag do %>
+
+	    var shots_att = <%= stat.shots_att %>
+	    var high_paint_att = <%= stat.high_paint_att %>;
+	    var high_paint_made = <%= stat.high_paint_made %>;
+	    var low_paint_att = <%= stat.low_paint_att %>;
+	    var low_paint_made = <%= stat.low_paint_made %>;
+	    var at_rim_layup_shots_att = <%= stat.at_rim_layup_shots_att %>;
+	    var at_rim_layup_shots_made = <%= stat.at_rim_layup_shots_made %>;
+	    var at_rim_dunk_shots_att = <%= stat.at_rim_dunk_shots_att %>;
+	    var at_rim_dunk_shots_made = <%= stat.at_rim_dunk_shots_made %>;
+
+	  <% end %>
+  <% end %>
+
+  <script type="text/javascript">
+	$(function() {
+	    $('#stacked_bar_location_paint').highcharts({
+	        chart: {
+	            type: 'bar',
+	            height: 200
+	       },
+	        title: {
+	            text: 'Shot location distribution (In The Paint)'
+	        },
+	        xAxis: {
+	            categories: ['Attempts', 'Shots Made']
+	        },
+	        yAxis: {
+	            title: {
+	                text: ''
+	            },
+	            min: 0,
+	            max: shots_att,
+	            tickWidth: 1,
+	            gridLineWidth: 0,
+	            lineWidth: 1
+	        },
+	        legend: {
+	            layout: 'horizontal',
+	            verticalAlign: 'bottom',
+	            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF',
+	            borderWidth: 1
+	        },
+	        plotOptions: {
+	            bar: {
+	                stacking: 'normal'
+	            }
+	        },
+            series: [{
+                name: 'High Paint',
+                data: [high_paint_att, high_paint_made]
+            }, {
+                name: 'Low Paint',
+                data: [low_paint_att, low_paint_made]
+            }, {
+                name: 'At-Rim Layups',
+                data: [at_rim_layup_shots_att, at_rim_layup_shots_made]
+            }, {
+                name: 'At-Rim Dunks',
+                data: [at_rim_dunk_shots_att, at_rim_dunk_shots_made]
+            }],
+	        tooltip: {
+                pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
+                shared: true
+            },
+	    });
+	});
+  </script>
+</div>
+<% end %>

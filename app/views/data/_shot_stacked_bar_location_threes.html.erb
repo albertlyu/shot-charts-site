@@ -1,0 +1,70 @@
+<% unless @shots.nil? || @shots == "[]" %>
+<div class="panel panel-default" style="width:700px">
+  <div id="stacked_bar_location_threes"></div>
+  <% @player_shot_stats.each do |stat| %>
+	  <%= javascript_tag do %>
+
+	    var shots_att = <%= stat.shots_att %>
+	    var corner_3_att = <%= stat.corner_3_att %>;
+	    var corner_3_made = <%= stat.corner_3_made %>;
+	    var wing_3_att = <%= stat.wing_3_att %>;
+	    var wing_3_made = <%= stat.wing_3_made %>;
+	    var straight_up_3_att = <%= stat.straight_up_3_att %>;
+	    var straight_up_3_made = <%= stat.straight_up_3_made %>;
+
+	  <% end %>
+  <% end %>
+
+  <script type="text/javascript">
+	$(function() {
+	    $('#stacked_bar_location_threes').highcharts({
+	        chart: {
+	            type: 'bar',
+	            height: 200
+	       },
+	        title: {
+	            text: 'Shot location distribution (Three Pointers)'
+	        },
+	        xAxis: {
+	            categories: ['Attempts', 'Shots Made']
+	        },
+	        yAxis: {
+	            title: {
+	                text: ''
+	            },
+	            min: 0,
+	            max: shots_att,
+	            tickWidth: 1,
+	            gridLineWidth: 0,
+	            lineWidth: 1
+	        },
+	        legend: {
+	            layout: 'horizontal',
+	            verticalAlign: 'bottom',
+	            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF',
+	            borderWidth: 1
+	        },
+	        plotOptions: {
+	            bar: {
+	                stacking: 'normal'
+	            }
+	        },
+            series: [{
+                name: 'Corner 3s',
+                data: [corner_3_att, corner_3_made]
+            }, {
+                name: 'Wing 3s',
+                data: [wing_3_att, wing_3_made]
+            }, {
+                name: 'Straight-Up 3s',
+                data: [straight_up_3_att, straight_up_3_made]
+            }],
+	        tooltip: {
+                pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
+                shared: true
+            },
+	    });
+	});
+  </script>
+</div>
+<% end %>

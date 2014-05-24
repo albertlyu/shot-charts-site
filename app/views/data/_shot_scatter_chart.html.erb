@@ -1,6 +1,6 @@
 <% unless @shots.nil? || @shots == "[]" %>
 <div class="panel panel-default" style="width:700px">
-  <div id="shotchart"></div>
+  <div id="shotchart" align="center" style="padding-right:50px"></div>
   <%= javascript_tag do %>
     var shots = <%= @shots.to_json.html_safe %>;
     var made = _.where(shots, {made: true});
