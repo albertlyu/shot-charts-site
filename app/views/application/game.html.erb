@@ -1,6 +1,6 @@
 <h4><strong><%= @game.date %>: <a href="../teams/<%= @home.team_id %>"><%= @home.team_name %></a> vs <a href="../teams/<%= @away.team_id %>"><%= @away.team_name %></a> at <%= @game.venue_name %></strong></h4>
 
-<%= render "data/shot_scatter_chart" %>
+<%= render "charts/scatter_chart" %>
 
 <ul>
 <% @plays.each do |play| %>

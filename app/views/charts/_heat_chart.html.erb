@@ -27,16 +27,15 @@
 		// let's get some data
 		var data = {
 		    max: 20,
-		    data: []
+		    data: [
+			<% @shots.each do |shot| %>
+				{ x: -<%= shot.to_json.html_safe %>['x_coord']*width/60+width/2
+				, y: -<%= shot.to_json.html_safe %>['y_coord']*height/36+height-60
+				, count: 10 },
+			<% end %>
+		    ]
 		};
 		heatmap.store.setDataSet(data);
-
-		<% @shots.each do |shot| %>
-			var shot = <%= shot.to_json.html_safe %>;
-			var xcoord = -shot['x_coord']*width/60+width/2;
-			var ycoord = -shot['y_coord']*height/36+height-60;
-			heatmap.store.addDataPoint(xcoord, ycoord, [1]);
-		<% end %>
 	<% end %>
 </div>
 <% end %>
