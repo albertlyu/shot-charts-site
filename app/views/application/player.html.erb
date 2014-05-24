@@ -4,13 +4,18 @@
   <li class="active"><a href="#heat_chart" data-toggle="tab">Shot Heatmap</a></li>
   <li><a href="#scatter_chart" data-toggle="tab">Shot Chart</a></li>
   <li><a href="#stacked_bar" data-toggle="tab">Shot Distributions</a></li>
+  <li><a href="#game_log" data-toggle="tab">Game Log</a></li>
 </ul>
 <div class="tab-content">
   <div class="tab-pane active" id="heat_chart">
   	<%= render "charts/heat_chart" %>
+  	<%= render "data/player_basic_stats" %>
+  	<%= render "data/player_shot_stats" %>
   </div>
   <div class="tab-pane" id="scatter_chart">
   	<%= render "charts/scatter_chart" %>
+  	<%= render "data/player_basic_stats" %>
+  	<%= render "data/player_shot_stats" %>
   </div>
   <div class="tab-pane" id="stacked_bar">
   	<%= render "charts/stacked_bar_location" %>
@@ -19,9 +24,7 @@
   	<%= render "charts/stacked_bar_location_paint" %>
   	<%= render "charts/stacked_bar_type" %>
   </div>
+  <div class="tab-pane" id="game_log">
+  	<%= render "data/player_game_log" %>
+  </div>
 </div>
-<%= render "data/player_basic_stats" %>
-<%= render "data/player_shot_stats" %>
-
-<h4>Game Log</h4>
-<%= render "data/player_game_log" %>
