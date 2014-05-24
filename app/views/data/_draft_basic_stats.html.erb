@@ -20,15 +20,15 @@
       <tr>
         <td><strong><a href="../players/<%= stat.player.player_id %>"><%= stat.player.player_first_name %> <%= stat.player.player_last_name %></a></strong></td>
         <td><a href="../teams/<%= stat.player.team_id %>"><%= stat.player.team.team_name %> <%= stat.player.team.team_mascot %></a></td>
-        <td><%= '%.1f' % stat.ppg.to_f %></td>
-        <td><%= '%.1f' % stat.rpg.to_f %></td>
-        <td><%= '%.1f' % stat.apg.to_f %></td>
-        <td><%= '%.1f' % stat.spg.to_f %></td>
-        <td><%= '%.1f' % stat.bpg.to_f %></td>
-        <td><%= '%.3f' % stat.fgpct.to_f%></td>
-        <td><%= '%.3f' % stat.ftpct.to_f %></td>
-        <td><%= '%.3f' % stat.threefgpct.to_f %></td>
-        <td><%= '%.3f' % stat.efgpct.to_f %></td>
+        <td><%= '%.1f' % stat.points_per_game.to_f %></td>
+        <td><%= '%.1f' % stat.rebounds_per_game.to_f %></td>
+        <td><%= '%.1f' % stat.assists_per_game.to_f %></td>
+        <td><%= '%.1f' % stat.steals_per_game.to_f %></td>
+        <td><%= '%.1f' % stat.blocks_per_game.to_f %></td>
+        <td><%= '%.3f' % stat.field_goals_pct.to_f%></td>
+        <td><%= '%.3f' % stat.free_throws_pct.to_f %></td>
+        <td><%= '%.3f' % stat.three_point_field_goals_pct.to_f %></td>
+        <td><%= '%.3f' % stat.effective_field_goals_pct.to_f %></td>
       </tr>
       <% end %>
     </tbody>
@@ -57,15 +57,15 @@
       <tr>
         <td><strong><a href="../players/<%= stat.player.player_id %>"><%= stat.player.player_first_name %> <%= stat.player.player_last_name %></a></strong></td>
         <td><a href="../teams/<%= stat.player.team_id %>"><%= stat.player.team.team_name %> <%= stat.player.team.team_mascot %></a></td>
-        <td><%= '%.1f' % stat.ppg.to_f %></td>
-        <td><%= '%.1f' % stat.rpg.to_f %></td>
-        <td><%= '%.1f' % stat.apg.to_f %></td>
-        <td><%= '%.1f' % stat.spg.to_f %></td>
-        <td><%= '%.1f' % stat.bpg.to_f %></td>
-        <td><%= '%.3f' % stat.fgpct.to_f%></td>
-        <td><%= '%.3f' % stat.ftpct.to_f %></td>
-        <td><%= '%.3f' % stat.threefgpct.to_f %></td>
-        <td><%= '%.3f' % stat.efgpct.to_f %></td>
+        <td><%= '%.1f' % stat.points_per_game.to_f %></td>
+        <td><%= '%.1f' % stat.rebounds_per_game.to_f %></td>
+        <td><%= '%.1f' % stat.assists_per_game.to_f %></td>
+        <td><%= '%.1f' % stat.steals_per_game.to_f %></td>
+        <td><%= '%.1f' % stat.blocks_per_game.to_f %></td>
+        <td><%= '%.3f' % stat.field_goals_pct.to_f%></td>
+        <td><%= '%.3f' % stat.free_throws_pct.to_f %></td>
+        <td><%= '%.3f' % stat.three_point_field_goals_pct.to_f %></td>
+        <td><%= '%.3f' % stat.effective_field_goals_pct.to_f %></td>
       </tr>
       <% end %>
     </tbody>
@@ -94,15 +94,15 @@
       <tr>
         <td><strong><a href="../players/<%= stat.player.player_id %>"><%= stat.player.player_first_name %> <%= stat.player.player_last_name %></a></strong></td>
         <td><a href="../teams/<%= stat.player.team_id %>"><%= stat.player.team.team_name %> <%= stat.player.team.team_mascot %></a></td>
-        <td><%= '%.1f' % stat.ppg.to_f %></td>
-        <td><%= '%.1f' % stat.rpg.to_f %></td>
-        <td><%= '%.1f' % stat.apg.to_f %></td>
-        <td><%= '%.1f' % stat.spg.to_f %></td>
-        <td><%= '%.1f' % stat.bpg.to_f %></td>
-        <td><%= '%.3f' % stat.fgpct.to_f%></td>
-        <td><%= '%.3f' % stat.ftpct.to_f %></td>
-        <td><%= '%.3f' % stat.threefgpct.to_f %></td>
-        <td><%= '%.3f' % stat.efgpct.to_f %></td>
+        <td><%= '%.1f' % stat.points_per_game.to_f %></td>
+        <td><%= '%.1f' % stat.rebounds_per_game.to_f %></td>
+        <td><%= '%.1f' % stat.assists_per_game.to_f %></td>
+        <td><%= '%.1f' % stat.steals_per_game.to_f %></td>
+        <td><%= '%.1f' % stat.blocks_per_game.to_f %></td>
+        <td><%= '%.3f' % stat.field_goals_pct.to_f%></td>
+        <td><%= '%.3f' % stat.free_throws_pct.to_f %></td>
+        <td><%= '%.3f' % stat.three_point_field_goals_pct.to_f %></td>
+        <td><%= '%.3f' % stat.effective_field_goals_pct.to_f %></td>
       </tr>
       <% end %>
     </tbody>
@@ -131,15 +131,15 @@
       <tr>
         <td><strong><a href="../players/<%= stat.player.player_id %>"><%= stat.player.player_first_name %> <%= stat.player.player_last_name %></a></strong></td>
         <td><a href="../teams/<%= stat.player.team_id %>"><%= stat.player.team.team_name %> <%= stat.player.team.team_mascot %></a></td>
-        <td><%= '%.1f' % stat.ppg.to_f %></td>
-        <td><%= '%.1f' % stat.rpg.to_f %></td>
-        <td><%= '%.1f' % stat.apg.to_f %></td>
-        <td><%= '%.1f' % stat.spg.to_f %></td>
-        <td><%= '%.1f' % stat.bpg.to_f %></td>
-        <td><%= '%.3f' % stat.fgpct.to_f%></td>
-        <td><%= '%.3f' % stat.ftpct.to_f %></td>
-        <td><%= '%.3f' % stat.threefgpct.to_f %></td>
-        <td><%= '%.3f' % stat.efgpct.to_f %></td>
+        <td><%= '%.1f' % stat.points_per_game.to_f %></td>
+        <td><%= '%.1f' % stat.rebounds_per_game.to_f %></td>
+        <td><%= '%.1f' % stat.assists_per_game.to_f %></td>
+        <td><%= '%.1f' % stat.steals_per_game.to_f %></td>
+        <td><%= '%.1f' % stat.blocks_per_game.to_f %></td>
+        <td><%= '%.3f' % stat.field_goals_pct.to_f%></td>
+        <td><%= '%.3f' % stat.free_throws_pct.to_f %></td>
+        <td><%= '%.3f' % stat.three_point_field_goals_pct.to_f %></td>
+        <td><%= '%.3f' % stat.effective_field_goals_pct.to_f %></td>
       </tr>
       <% end %>
     </tbody>
@@ -168,15 +168,15 @@
       <tr>
         <td><strong><a href="../players/<%= stat.player.player_id %>"><%= stat.player.player_first_name %> <%= stat.player.player_last_name %></a></strong></td>
         <td><a href="../teams/<%= stat.player.team_id %>"><%= stat.player.team.team_name %> <%= stat.player.team.team_mascot %></a></td>
-        <td><%= '%.1f' % stat.ppg.to_f %></td>
-        <td><%= '%.1f' % stat.rpg.to_f %></td>
-        <td><%= '%.1f' % stat.apg.to_f %></td>
-        <td><%= '%.1f' % stat.spg.to_f %></td>
-        <td><%= '%.1f' % stat.bpg.to_f %></td>
-        <td><%= '%.3f' % stat.fgpct.to_f%></td>
-        <td><%= '%.3f' % stat.ftpct.to_f %></td>
-        <td><%= '%.3f' % stat.threefgpct.to_f %></td>
-        <td><%= '%.3f' % stat.efgpct.to_f %></td>
+        <td><%= '%.1f' % stat.points_per_game.to_f %></td>
+        <td><%= '%.1f' % stat.rebounds_per_game.to_f %></td>
+        <td><%= '%.1f' % stat.assists_per_game.to_f %></td>
+        <td><%= '%.1f' % stat.steals_per_game.to_f %></td>
+        <td><%= '%.1f' % stat.blocks_per_game.to_f %></td>
+        <td><%= '%.3f' % stat.field_goals_pct.to_f%></td>
+        <td><%= '%.3f' % stat.free_throws_pct.to_f %></td>
+        <td><%= '%.3f' % stat.three_point_field_goals_pct.to_f %></td>
+        <td><%= '%.3f' % stat.effective_field_goals_pct.to_f %></td>
       </tr>
       <% end %>
     </tbody>
