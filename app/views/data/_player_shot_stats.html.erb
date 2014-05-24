@@ -14,20 +14,20 @@
         <tbody>
             <% @player_shot_stats.each do |stat| %>
             <tr>
-                <td class="text-center"><%= stat.atrimmade %>-<%= stat.atrimatt %></td>
-                <td class="text-center"><%= '%.3f' % stat.atrimfgpct %></td>
-                <td class="text-center"><%= stat.shortmade %>-<%= stat.shortatt %></td>
-                <td class="text-center"><%= '%.3f' % stat.shortfgpct %></td>
-                <td class="text-center"><%= stat.midmade %>-<%= stat.midatt %></td>
-                <td class="text-center"><%= '%.3f' % stat.midfgpct %></td>
-                <td class="text-center"><%= stat.longmade %>-<%= stat.longatt %></td>
-                <td class="text-center"><%= '%.3f' % stat.longfgpct %></td>
-                <td class="text-center"><%= stat.threemade %>-<%= stat.threeatt %></td>
-                <td class="text-center"><%= '%.3f' % stat.threefgpct %></td>
-                <td class="text-center"><%= stat.inthepaintmade %>-<%= stat.inthepaintatt %></td>
-                <td class="text-center"><%= '%.3f' % stat.inthepaintfgpct %></td>
-                <td class="text-center"><%= stat.outsidethepaintmade %>-<%= stat.outsidethepaintatt %></td>
-                <td class="text-center"><%= '%.3f' % stat.outsidethepaintfgpct %></td>
+                <td class="text-center"><%= stat.at_rim_made %>-<%= stat.at_rim_att %></td>
+                <td class="text-center"><%= '%.3f' % stat.at_rim_pct_made %></td>
+                <td class="text-center"><%= stat.short_made %>-<%= stat.short_att %></td>
+                <td class="text-center"><%= '%.3f' % stat.short_pct_made %></td>
+                <td class="text-center"><%= stat.mid_made %>-<%= stat.mid_att %></td>
+                <td class="text-center"><%= '%.3f' % stat.mid_pct_made %></td>
+                <td class="text-center"><%= stat.long_made %>-<%= stat.long_att %></td>
+                <td class="text-center"><%= '%.3f' % stat.long_pct_made %></td>
+                <td class="text-center"><%= stat.threes_made %>-<%= stat.threes_att %></td>
+                <td class="text-center"><%= '%.3f' % stat.threes_pct_made %></td>
+                <td class="text-center"><%= stat.in_the_paint_made %>-<%= stat.in_the_paint_att %></td>
+                <td class="text-center"><%= '%.3f' % stat.in_the_paint_pct_made %></td>
+                <td class="text-center"><%= stat.outside_the_paint_made %>-<%= stat.outside_the_paint_att %></td>
+                <td class="text-center"><%= '%.3f' % stat.outside_the_paint_pct_made %></td>
             </tr>
             <% end %>
         </tbody>

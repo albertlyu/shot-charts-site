@@ -19,18 +19,18 @@
         <tbody>
             <% @player_basic_stats.each do |stat| %>
             <tr>
-                <td class="text-center"><%= '%.1f' % stat.ppg.to_f %></td>
-                <td class="text-center"><%= '%.1f' % stat.rpg.to_f %></td>
-                <td class="text-center"><%= '%.1f' % stat.apg.to_f %></td>
-                <td class="text-center"><%= '%.1f' % stat.spg.to_f %></td>
-                <td class="text-center"><%= '%.1f' % stat.bpg.to_f %></td>
-                <td class="text-center"><%= '%.3f' % stat.fgpct.to_f %></td>
-                <td class="text-center"><%= '%.3f' % stat.ftpct.to_f %></td>
-                <td class="text-center"><%= '%.3f' % stat.threefgpct.to_f %></td>
-                <td class="text-center"><%= '%.3f' % stat.efgpct.to_f %></td>
-                <td class="text-center"><%= '%.1f' % stat.pp40.to_f %></td>
-                <td class="text-center"><%= '%.1f' % stat.rp40.to_f %></td>
-                <td class="text-center"><%= '%.1f' % stat.ap40.to_f %></td>
+                <td class="text-center"><%= '%.1f' % stat.points_per_game.to_f %></td>
+                <td class="text-center"><%= '%.1f' % stat.rebounds_per_game.to_f %></td>
+                <td class="text-center"><%= '%.1f' % stat.assists_per_game.to_f %></td>
+                <td class="text-center"><%= '%.1f' % stat.steals_per_game.to_f %></td>
+                <td class="text-center"><%= '%.1f' % stat.blocks_per_game.to_f %></td>
+                <td class="text-center"><%= '%.3f' % stat.field_goals_pct.to_f %></td>
+                <td class="text-center"><%= '%.3f' % stat.free_throws_pct.to_f %></td>
+                <td class="text-center"><%= '%.3f' % stat.three_point_field_goals_pct.to_f %></td>
+                <td class="text-center"><%= '%.3f' % stat.effective_field_goals_pct.to_f %></td>
+                <td class="text-center"><%= '%.1f' % stat.points_per_40_minutes.to_f %></td>
+                <td class="text-center"><%= '%.1f' % stat.rebounds_per_40_minutes.to_f %></td>
+                <td class="text-center"><%= '%.1f' % stat.assists_per_40_minutes.to_f %></td>
             </tr>
             <% end %>
         </tbody>
