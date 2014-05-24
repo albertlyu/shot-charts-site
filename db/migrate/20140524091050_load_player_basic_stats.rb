@@ -20,11 +20,17 @@ class LoadPlayerBasicStats < ActiveRecord::Migration
 			, CASE WHEN SUM(player_games.free_throws_att)::float = 0 THEN 0 ELSE SUM(player_games.free_throws_made)::float/SUM(player_games.free_throws_att)::float END AS free_throws_pct
 			, CASE WHEN SUM(player_games.three_point_field_goals_att)::float = 0 THEN 0 ELSE SUM(player_games.three_point_field_goals_made)::float/SUM(player_games.three_point_field_goals_att)::float END AS three_point_field_goals_pct
 			, CASE WHEN SUM(player_games.field_goals_att)::float = 0 THEN 0 ELSE (SUM(player_games.field_goals_made)::float+0.5*SUM(player_games.three_point_field_goals_made))/(SUM(player_games.field_goals_att)::float) END AS effective_field_goals_pct
+			, CASE WHEN SUM(player_games.minutes)::float = 0 THEN 0 ELSE SUM(player_games.points)::float/(SUM(player_games.minutes)::float/40.0) END AS points_per_40_minutes
+			, CASE WHEN SUM(player_games.minutes)::float = 0 THEN 0 ELSE SUM(player_games.rebounds_total)::float/(SUM(player_games.minutes)::float/40.0) END AS rebounds_per_40_minutes
+			, CASE WHEN SUM(player_games.minutes)::float = 0 THEN 0 ELSE SUM(player_games.assists)::float/(SUM(player_games.minutes)::float/40.0) END AS assists_per_40_minutes
+			, CASE WHEN SUM(player_games.minutes)::float = 0 THEN 0 ELSE SUM(player_games.steals)::float/(SUM(player_games.minutes)::float/40.0) END AS steals_per_40_minutes
+			, CASE WHEN SUM(player_games.minutes)::float = 0 THEN 0 ELSE SUM(player_games.blocked_shots)::float/(SUM(player_games.minutes)::float/40.0) END AS blocks_per_40_minutes
+			, CASE WHEN SUM(player_games.minutes)::float = 0 THEN 0 ELSE SUM(player_games.turnovers)::float/(SUM(player_games.minutes)::float/40.0) END AS turnovers_per_40_minutes
 		FROM player_games
 		WHERE player_id IS NOT NULL
 		GROUP BY player_id, team_id;"
   end
-
+  
   def down
     execute "TRUNCATE player_basic_stats;"
   end

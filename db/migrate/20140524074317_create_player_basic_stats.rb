@@ -16,6 +16,12 @@ class CreatePlayerBasicStats < ActiveRecord::Migration
       t.float :free_throws_pct
       t.float :three_point_field_goals_pct
       t.float :effective_field_goals_pct
+      t.float :points_per_40_minutes
+      t.float :rebounds_per_40_minutes
+      t.float :assists_per_40_minutes
+      t.float :steals_per_40_minutes
+      t.float :blocks_per_40_minutes
+      t.float :turnovers_per_40_minutes
 
       t.timestamps
     end
