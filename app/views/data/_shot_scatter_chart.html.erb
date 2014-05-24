@@ -1,11 +1,10 @@
-<% @shots = @plays.where("x_coord IS NOT NULL").to_json.html_safe %>
 <% unless @shots.nil? || @shots == "[]" %>
 <div class="panel panel-default" style="width:700px">
   <div id="shotchart"></div>
   <%= javascript_tag do %>
-    var shots = <%= @shots %>;
-    var made = _.where(shots, {event_desc: "Field Goal Made"});
-    var miss = _.where(shots, {event_desc: "Field Goal Missed"});
+    var shots = <%= @shots.to_json.html_safe %>;
+    var made = _.where(shots, {made: true});
+    var miss = _.where(shots, {made: false});
     var two = _.where(shots, {points_type: 2});
     var three = _.where(shots, {points_type: 3});
   <% end %>
