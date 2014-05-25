@@ -15,7 +15,7 @@
 	        chart: {
 	            type: 'scatter',
 	            width: 650,
-	            plotBackgroundImage: 'http://dl.dropboxusercontent.com/s/lfd3doj34oa3b3c/court.png' 
+	            plotBackgroundImage: 'http://dl.dropboxusercontent.com/s/2lktk4ik0enk916/court_offense.png' 
 	       },
 	        title: {
 	            text: ''
@@ -39,14 +39,15 @@
 	            max: 30,
 	            tickWidth: 1,
 	            gridLineWidth: 0,
-	            lineWidth: 1
+	            lineWidth: 1,
+	            reversed: true
 	        },
 	        legend: {
 	            layout: 'vertical',
-	            align: 'left',
-	            verticalAlign: 'top',
-	            x: 55,
-	            y: 0,
+	            align: 'right',
+	            verticalAlign: 'bottom',
+	            x: 10,
+	            y: -30,
 	            floating: true,
 	            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF',
 	            borderWidth: 1
@@ -80,7 +81,7 @@
 	                var madeArray = [];
 	                $.map(made, function(shot, index){
 	                    madeArray.push({
-	                        x: -shot.x_coord,
+	                        x: shot.x_coord,
 	                        y: shot.y_coord,
 	                        name: shot.details,
 	                    });
@@ -97,7 +98,7 @@
 	                var missArray = [];
 	                $.map(miss, function(shot, index){
 	                    missArray.push({
-	                        x: -shot.x_coord,
+	                        x: shot.x_coord,
 	                        y: shot.y_coord,
 	                        name: shot.details,
 	                    });

@@ -24,7 +24,8 @@
 	    $('#stacked_bar_type').highcharts({
 	        chart: {
 	            type: 'bar',
-	            height: 200
+	            height: 190,
+	            width: 698
 	       },
 	        title: {
 	            text: 'Shot Type Distribution'
@@ -40,11 +41,14 @@
 	            max: shots_att,
 	            tickWidth: 1,
 	            gridLineWidth: 0,
-	            lineWidth: 1
+	            lineWidth: 1,
+	            reversed: false,
+	            reversedStacks: false
 	        },
 	        legend: {
-	            layout: 'horizontal',
-	            verticalAlign: 'bottom',
+	            layout: 'vertical',
+	            align: 'right',
+	            verticalAlign: 'middle',
 	            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF',
 	            borderWidth: 1
 	        },

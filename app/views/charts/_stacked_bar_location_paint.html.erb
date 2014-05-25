@@ -7,18 +7,18 @@
 	    var shots_att = <%= stat.shots_att %>
 
 	    // Switch right with left
-	    var right_high_paint_att = <%= stat.left_high_paint_att %>;
-	    var right_high_paint_made = <%= stat.left_high_paint_made %>;
-	    var right_low_paint_att = <%= stat.left_low_paint_att %>;
-	    var right_low_paint_made = <%= stat.left_low_paint_made %>;
+	    var left_high_paint_att = <%= stat.right_high_paint_att %>;
+	    var left_high_paint_made = <%= stat.right_high_paint_made %>;
+	    var left_low_paint_att = <%= stat.right_low_paint_att %>;
+	    var left_low_paint_made = <%= stat.right_low_paint_made %>;
 	    var at_rim_layup_shots_att = <%= stat.at_rim_layup_shots_att %>;
 	    var at_rim_layup_shots_made = <%= stat.at_rim_layup_shots_made %>;
 	    var at_rim_dunk_shots_att = <%= stat.at_rim_dunk_shots_att %>;
 	    var at_rim_dunk_shots_made = <%= stat.at_rim_dunk_shots_made %>;
-	    var left_low_paint_att = <%= stat.right_low_paint_att %>;
-	    var left_low_paint_made = <%= stat.right_low_paint_made %>;
-	    var left_high_paint_att = <%= stat.right_high_paint_att %>;
-	    var left_high_paint_made = <%= stat.right_high_paint_made %>;
+	    var right_low_paint_att = <%= stat.left_low_paint_att %>;
+	    var right_low_paint_made = <%= stat.left_low_paint_made %>;
+	    var right_high_paint_att = <%= stat.left_high_paint_att %>;
+	    var right_high_paint_made = <%= stat.left_high_paint_made %>;
 
 	  <% end %>
   <% end %>
@@ -46,7 +46,8 @@
 	            tickWidth: 1,
 	            gridLineWidth: 0,
 	            lineWidth: 1,
-	            reversed: true
+	            reversed: false,
+	            reversedStacks: false
 	        },
 	        legend: {
 	            layout: 'vertical',
@@ -62,13 +63,13 @@
 	            }
 	        },
             series: [{
-                name: 'Right High Paint',
+                name: 'Left High Paint',
                 color: '#FF9B73',
-                data: [right_high_paint_att, right_high_paint_made]
+                data: [left_high_paint_att, left_high_paint_made]
             }, {
-                name: 'Right Low Paint',
+                name: 'Left Low Paint',
                 color: '#FF7640',
-                data: [right_low_paint_att, right_low_paint_made]
+                data: [left_low_paint_att, left_low_paint_made]
             }, {
                 name: 'At-Rim Layups',
                 color: '#FF4900',
@@ -78,13 +79,13 @@
                 color: '#A65600',
                 data: [at_rim_dunk_shots_att, at_rim_dunk_shots_made]
             }, {
-                name: 'Left Low Paint',
+                name: 'Right Low Paint',
                 color: '#FF7640',
-                data: [left_low_paint_att, left_low_paint_made]
+                data: [right_low_paint_att, right_low_paint_made]
             }, {
-                name: 'Left High Paint',
+                name: 'Right High Paint',
                 color: '#FF9B73',
-                data: [left_high_paint_att, left_high_paint_made]
+                data: [right_high_paint_att, right_high_paint_made]
             }],
 	        tooltip: {
                 pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',

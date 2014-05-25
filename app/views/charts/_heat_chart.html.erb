@@ -2,9 +2,9 @@
 #heatmapArea {
 	position: relative;
 	width: 640px;
-	height: 368px;
+	height: 360px;
 	left: 30px;
-	background: url("http://dl.dropboxusercontent.com/s/lfd3doj34oa3b3c/court.png");
+	background: url("http://dl.dropboxusercontent.com/s/2lktk4ik0enk916/court_offense.png");
 }
 </style>
 
@@ -29,8 +29,8 @@
 		    max: 20,
 		    data: [
 			<% @shots.each do |shot| %>
-				{ x: -<%= shot.to_json.html_safe %>['x_coord']*width/60+width/2
-				, y: -<%= shot.to_json.html_safe %>['y_coord']*height/36+height-60
+				{ x: <%= shot.to_json.html_safe %>['x_coord']*width/60+width/2
+				, y: <%= shot.to_json.html_safe %>['y_coord']*height/35+53
 				, count: 10 },
 			<% end %>
 		    ]

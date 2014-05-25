@@ -7,16 +7,16 @@
 	  	var shots_att = <%= stat.shots_att %>
 	    
 	    // Switch right with left
-	    var right_corner_3_att = <%= stat.left_corner_3_att %>;
-	    var right_corner_3_made = <%= stat.left_corner_3_made %>;
-	    var right_wing_3_att = <%= stat.left_wing_3_att %>;
-	    var right_wing_3_made = <%= stat.left_wing_3_made %>;
-	    var straight_up_3_att = <%= stat.straight_up_3_att %>;
-	    var straight_up_3_made = <%= stat.straight_up_3_made %>;
-	    var left_wing_3_att = <%= stat.right_wing_3_att %>;
-	    var left_wing_3_made = <%= stat.right_wing_3_made %>;
 	    var left_corner_3_att = <%= stat.right_corner_3_att %>;
 	    var left_corner_3_made = <%= stat.right_corner_3_made %>;
+	    var left_wing_3_att = <%= stat.right_wing_3_att %>;
+	    var left_wing_3_made = <%= stat.right_wing_3_made %>;
+	    var straight_up_3_att = <%= stat.straight_up_3_att %>;
+	    var straight_up_3_made = <%= stat.straight_up_3_made %>;
+	    var right_wing_3_att = <%= stat.left_wing_3_att %>;
+	    var right_wing_3_made = <%= stat.left_wing_3_made %>;
+	    var right_corner_3_att = <%= stat.left_corner_3_att %>;
+	    var right_corner_3_made = <%= stat.left_corner_3_made %>;
 
 	  <% end %>
   <% end %>
@@ -44,7 +44,8 @@
 	            tickWidth: 1,
 	            gridLineWidth: 0,
 	            lineWidth: 1,
-	            reversed: true
+	            reversed: false,
+	            reversedStacks: false
 	        },
 	        legend: {
 	            layout: 'vertical',
@@ -60,25 +61,25 @@
 	            }
 	        },
             series: [{
-                name: 'Right Corner 3s',
+                name: 'Left Corner 3s',
                 color: '#60B9CE',
-                data: [right_corner_3_att, right_corner_3_made]
-            }, {
-                name: 'Right Wing 3s',
-                color: '#04819E',
-                data: [right_wing_3_att, right_wing_3_made]
-            }, {
-                name: 'Straight-Up 3s',
-                color: '#015367',
-                data: [straight_up_3_att, straight_up_3_made]
+                data: [left_corner_3_att, left_corner_3_made]
             }, {
                 name: 'Left Wing 3s',
                 color: '#04819E',
                 data: [left_wing_3_att, left_wing_3_made]
             }, {
-                name: 'Left Corner 3s',
+                name: 'Straight-Up 3s',
+                color: '#015367',
+                data: [straight_up_3_att, straight_up_3_made]
+            }, {
+                name: 'Right Wing 3s',
+                color: '#04819E',
+                data: [right_wing_3_att, right_wing_3_made]
+            }, {
+                name: 'Right Corner 3s',
                 color: '#60B9CE',
-                data: [left_corner_3_att, left_corner_3_made]
+                data: [right_corner_3_att, right_corner_3_made]
             }],
 	        tooltip: {
                 pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
