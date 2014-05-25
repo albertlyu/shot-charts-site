@@ -4,17 +4,19 @@
   <% @player_shot_stats.each do |stat| %>
 	  <%= javascript_tag do %>
 
-	    var shots_att = <%= stat.shots_att %>
-	    var right_corner_3_att = <%= stat.right_corner_3_att %>;
-	    var right_corner_3_made = <%= stat.right_corner_3_made %>;
-	    var right_wing_3_att = <%= stat.right_wing_3_att %>;
-	    var right_wing_3_made = <%= stat.right_wing_3_made %>;
+	  	var shots_att = <%= stat.shots_att %>
+	    
+	    // Switch right with left
+	    var right_corner_3_att = <%= stat.left_corner_3_att %>;
+	    var right_corner_3_made = <%= stat.left_corner_3_made %>;
+	    var right_wing_3_att = <%= stat.left_wing_3_att %>;
+	    var right_wing_3_made = <%= stat.left_wing_3_made %>;
 	    var straight_up_3_att = <%= stat.straight_up_3_att %>;
 	    var straight_up_3_made = <%= stat.straight_up_3_made %>;
-	    var left_wing_3_att = <%= stat.left_wing_3_att %>;
-	    var left_wing_3_made = <%= stat.left_wing_3_made %>;
-	    var left_corner_3_att = <%= stat.left_corner_3_att %>;
-	    var left_corner_3_made = <%= stat.left_corner_3_made %>;
+	    var left_wing_3_att = <%= stat.right_wing_3_att %>;
+	    var left_wing_3_made = <%= stat.right_wing_3_made %>;
+	    var left_corner_3_att = <%= stat.right_corner_3_att %>;
+	    var left_corner_3_made = <%= stat.right_corner_3_made %>;
 
 	  <% end %>
   <% end %>
@@ -24,7 +26,7 @@
 	    $('#stacked_bar_location_threes').highcharts({
 	        chart: {
 	            type: 'bar',
-	            height: 200,
+	            height: 190,
 	            width: 698
 	       },
 	        title: {
@@ -81,6 +83,9 @@
 	        tooltip: {
                 pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
                 shared: true
+            },
+            credits: {
+            	enabled: false
             },
 	    });
 	});
