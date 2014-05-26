@@ -1,0 +1,82 @@
+<% unless @shots.nil? || @shots == "[]" %>
+<div class="panel panel-default" style="width:700px">
+  <div id="column_bar"></div>
+  <% @player_shot_stats.each do |stat| %>
+      <%= javascript_tag do %>
+
+        var shots_att = <%= stat.shots_att %>
+        var corner_3_pps = (<%= stat.corner_3_made %>*3 )/ <%= stat.corner_3_att %>;
+        var wing_3_pps = (<%= stat.wing_3_made %>*3) / <%= stat.wing_3_att %>;
+        var straight_up_3_pps = (<%= stat.straight_up_3_made %>*3) / <%= stat.straight_up_3_att %>;
+        var baseline_2_pps = (<%= stat.baseline_2_made %>*3) / <%= stat.baseline_2_att %>;
+        var wing_2_pps = (<%= stat.wing_2_made %>*2) / <%= stat.wing_2_att %>;
+        var straight_up_2_pps = (<%= stat.straight_up_2_made %>*2) / <%= stat.straight_up_2_att %>;
+        var high_paint_pps = (<%= stat.high_paint_made %>*2) / <%= stat.high_paint_att %>;
+        var low_paint_pps = (<%= stat.low_paint_made %>*2) / <%= stat.low_paint_att %>;
+        var at_rim_pps = (<%= stat.at_rim_made %>*2) / <%= stat.at_rim_att %>;
+        var at_rim_layup_shots_pps = (<%= stat.at_rim_layup_shots_made %>*2) / <%= stat.at_rim_layup_shots_att %>;
+        var at_rim_dunk_shots_pps = (<%= stat.at_rim_dunk_shots_made %>*2) / <%= stat.at_rim_dunk_shots_att %>;
+
+      <% end %>
+  <% end %>
+
+  <script type="text/javascript">
+    $(function () {
+        Highcharts.setOptions({
+            colors: ['#04819E', '#00B25C', '#FF4900', '#A65600']
+        });
+        $('#column_bar').highcharts({
+            chart: {
+                type: 'column',
+                height: 350,
+                width: 698
+            },
+            title: {
+                text: 'Points Per Shot by Shot Zone'
+            },
+            xAxis: {
+                categories: [
+                    'Corner, Baseline, High Paint',
+                    'Wing, Wing, Low Paint',
+                    'Straight-Up, Straight-Up, At-Rim'
+                ]
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Points per shot taken (pps)'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.1f} pps</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true,
+                hideDelay: 1,
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'Threes',
+                data: [corner_3_pps, wing_3_pps, straight_up_3_pps]
+            }, {
+                name: 'Outside-The-Paint 2s',
+                data: [baseline_2_pps, wing_2_pps, straight_up_2_pps]
+            }, {
+                name: 'In-The-Paint 2s',
+                data: [high_paint_pps, low_paint_pps, at_rim_pps]
+            }],
+            credits: {
+                enabled: false
+            },
+        });
+    });
+  </script>
+</div>
+<% end %>
