@@ -29,16 +29,16 @@
             chart: {
                 type: 'column',
                 height: 350,
-                width: 698
+                width: 698.5
             },
             title: {
                 text: 'Points Per Shot by Shot Zone'
             },
             xAxis: {
                 categories: [
-                    'Corner, Baseline, High Paint',
-                    'Wing, Wing, Low Paint',
-                    'Straight-Up, Straight-Up, At-Rim'
+                    'Corner | Baseline | High Paint',
+                    'Wing | Wing | Low Paint',
+                    'Straight-Up | Straight-Up | At-Rim'
                 ]
             },
             yAxis: {
@@ -63,7 +63,7 @@
                 }
             },
             series: [{
-                name: 'Threes',
+                name: 'Three Pointers',
                 data: [corner_3_pps, wing_3_pps, straight_up_3_pps]
             }, {
                 name: 'Outside-The-Paint 2s',
