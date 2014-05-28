@@ -12,7 +12,7 @@
 <div class="tab-content">
   <div class="tab-pane fade in active" id="shot_heatmap">
   	<%= render "charts/heat_chart" %>
-    <% @players = @player.team.players %>
+    <% @players = @player.team.players.order("player_last_name ASC") %>
     <%= render "partials/player_button" %>
     <%= render "data/player_basic_stats" %>
 <% unless @shots.to_json.html_safe.nil? || @shots.to_json.html_safe == "[]" %>
