@@ -7,6 +7,13 @@ class ApplicationController < ActionController::Base
     @teams = Team.where("team_name != '' and team_div = 'divia'").order("team_name ASC")
   end
 
+  def search
+    if params['q']
+      @players = Player.joins('LEFT JOIN teams ON teams.team_id = players.team_id').where("CONCAT(player_first_name, ' ', player_last_name, ' ', team_name, ' ', team_mascot) LIKE INITCAP('%#{params['q']}%')")
+      @teams = Team.where("CONCAT(team_name, ' ', team_mascot) LIKE INITCAP('%#{params['q']}%')")
+    end
+  end
+
   def draft
     @pg_basic_stats = PlayerBasicStat.where(:player_id => [97934, 109674, 116037, 97385, 121072, 97562, 110318, 116604, 97587, 97222]).group(:player_id).order(:player_id)
     @sg_basic_stats = PlayerBasicStat.where(:player_id => [116665, 97602, 110167, 109662, 117555, 109666, 120692, 97656, 116744, 88583]).group(:player_id).order(:player_id)
@@ -26,11 +33,10 @@ class ApplicationController < ActionController::Base
 
   def teams
     @teams = Team.where("team_name != '' AND team_div != ''").order("team_name ASC")
-    #@players = Player.where("player_team_id = ?", params['id']).order("player_team_id ASC")
   end
 
   def players
-    @players = Player.all.order("player_last_name ASC")
+    @players = Player.where("CONCAT(player_first_name, ' ', player_last_name) LIKE INITCAP('%#{params['q']}%')")
   end
 
   def team

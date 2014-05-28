@@ -1,6 +1,7 @@
 ShotCharts::Application.routes.draw do
   root 'home#index'
   get '/#' => 'home#index'
+  get '/search' => 'application#search'
 
   get '/draft' => 'application#draft'
   get '/tourney' => 'application#tourney'

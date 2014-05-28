@@ -1,5 +1,5 @@
 <div class="btn-group">
 <% @players.each do |player| %>
-  <a class="btn btn-default" style="width:210px; margin:5px"  href="../players/<%= player.player_id %>"><%= player.player_first_name %> <%= player.player_last_name %></a>
+  <a class="btn btn-default" style="margin:5px"  href="../players/<%= player.player_id %>"><%= player.player_first_name %> <%= player.player_last_name %><% if params['q'] %> (<%= player.team.team_name %> <%= player.team.team_mascot %>) <% end %></a>
 <% end %>
 </div>
