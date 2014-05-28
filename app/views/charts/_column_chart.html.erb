@@ -5,17 +5,17 @@
       <%= javascript_tag do %>
 
         var shots_att = <%= stat.shots_att %>
-        var corner_3_pps = (<%= stat.corner_3_made %>*3 )/ <%= stat.corner_3_att %>;
-        var wing_3_pps = (<%= stat.wing_3_made %>*3) / <%= stat.wing_3_att %>;
-        var straight_up_3_pps = (<%= stat.straight_up_3_made %>*3) / <%= stat.straight_up_3_att %>;
-        var baseline_2_pps = (<%= stat.baseline_2_made %>*2) / <%= stat.baseline_2_att %>;
-        var wing_2_pps = (<%= stat.wing_2_made %>*2) / <%= stat.wing_2_att %>;
-        var straight_up_2_pps = (<%= stat.straight_up_2_made %>*2) / <%= stat.straight_up_2_att %>;
-        var high_paint_pps = (<%= stat.high_paint_made %>*2) / <%= stat.high_paint_att %>;
-        var low_paint_pps = (<%= stat.low_paint_made %>*2) / <%= stat.low_paint_att %>;
-        var at_rim_pps = (<%= stat.at_rim_made %>*2) / <%= stat.at_rim_att %>;
-        var at_rim_layup_shots_pps = (<%= stat.at_rim_layup_shots_made %>*2) / <%= stat.at_rim_layup_shots_att %>;
-        var at_rim_dunk_shots_pps = (<%= stat.at_rim_dunk_shots_made %>*2) / <%= stat.at_rim_dunk_shots_att %>;
+        var corner_3_pps = (<%= stat.corner_3_made %>*3 )/ <%= stat.corner_3_att %> || 0;
+        var wing_3_pps = (<%= stat.wing_3_made %>*3) / <%= stat.wing_3_att %> || 0;
+        var straight_up_3_pps = (<%= stat.straight_up_3_made %>*3) / <%= stat.straight_up_3_att %> || 0;
+        var baseline_2_pps = (<%= stat.baseline_2_made %>*2) / <%= stat.baseline_2_att %> || 0;
+        var wing_2_pps = (<%= stat.wing_2_made %>*2) / <%= stat.wing_2_att %> || 0;
+        var straight_up_2_pps = (<%= stat.straight_up_2_made %>*2) / <%= stat.straight_up_2_att %> || 0;
+        var high_paint_pps = (<%= stat.high_paint_made %>*2) / <%= stat.high_paint_att %> || 0;
+        var low_paint_pps = (<%= stat.low_paint_made %>*2) / <%= stat.low_paint_att %> || 0;
+        var at_rim_pps = (<%= stat.at_rim_made %>*2) / <%= stat.at_rim_att %> || 0;
+        var at_rim_layup_shots_pps = (<%= stat.at_rim_layup_shots_made %>*2) / <%= stat.at_rim_layup_shots_att %> || 0;
+        var at_rim_dunk_shots_pps = (<%= stat.at_rim_dunk_shots_made %>*2) / <%= stat.at_rim_dunk_shots_att %> || 0;
 
       <% end %>
   <% end %>
