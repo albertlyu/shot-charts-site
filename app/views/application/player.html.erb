@@ -1,15 +1,19 @@
 <h4><strong><%= @player.player_first_name %> <%= @player.player_last_name %></strong> (<a href="../teams/<%= @player.team_id %>"><%= @player.team.team_name %> <%= @player.team.team_mascot %></a>)</h4>
 
+<% unless @shots.to_json.html_safe.nil? || @shots.to_json.html_safe == "[]" %>
 <ul class="nav nav-tabs" style="width:700px">
   <li class="active"><a href="#shot_heatmap" data-toggle="tab">Shot Frequency</a></li>
   <li><a href="#shot_chart" data-toggle="tab">Shot Locations</a></li>
   <li><a href="#shot_dist" data-toggle="tab">Shot Zone Distributions</a></li>
   <li><a href="#game_log" data-toggle="tab">Game Log</a></li>
 </ul>
+<% end %>
+
 <div class="tab-content">
   <div class="tab-pane fade in active" id="shot_heatmap">
   	<%= render "charts/heat_chart" %>
     <%= render "data/player_basic_stats" %>
+<% unless @shots.to_json.html_safe.nil? || @shots.to_json.html_safe == "[]" %>
     <%= render "data/player_shot_stats" %>
   </div>
   <div class="tab-pane fade" id="shot_chart">
@@ -44,6 +48,7 @@
     </div>
   </div>
   <div class="tab-pane fade" id="game_log">
+<% end %>
   	<%= render "data/player_game_log" %>
   </div>
 

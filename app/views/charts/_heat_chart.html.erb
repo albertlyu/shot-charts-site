@@ -8,7 +8,6 @@
 }
 </style>
 
-<% unless @shots.nil? || @shots == "[]" %>
 <div class="panel panel-default" style="height:401px; width:700px">
 	<div id="heatmapArea"></div>
 	<%= javascript_tag do %>
@@ -38,4 +37,3 @@
 		heatmap.store.setDataSet(data);
 	<% end %>
 </div>
-<% end %>
