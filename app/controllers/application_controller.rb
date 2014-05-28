@@ -42,7 +42,7 @@ class ApplicationController < ActionController::Base
   def team
     @team = Team.find_by(team_id: params['id'])
     @games = Game.where("home_team_id = ? OR away_team_id = ?", params['id'], params['id']).order("date ASC")
-    @players = Player.where("team_id = ?", params['id']).order("player_id ASC")
+    @players = Player.where("team_id = ?", params['id']).order("player_last_name ASC")
     @shots = Shot.where("team_id = ?", params['id']).order("id ASC")
   end
 
