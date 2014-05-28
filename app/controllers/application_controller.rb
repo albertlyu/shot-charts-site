@@ -36,7 +36,7 @@ class ApplicationController < ActionController::Base
   end
 
   def players
-    @players = Player.where("CONCAT(player_first_name, ' ', player_last_name) LIKE INITCAP('%#{params['q']}%')")
+    @players = Player.all.order("player_last_name ASC")
   end
 
   def team
