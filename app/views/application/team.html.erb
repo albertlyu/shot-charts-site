@@ -4,6 +4,7 @@
 <ul class="nav nav-tabs" style="width:700px">
   <li class="active"><a href="#shot_heatmap" data-toggle="tab">Shot Heatmap</a></li>
   <li><a href="#shot_chart" data-toggle="tab">Shot Chart</a></li>
+  <li><a href="#team_shot_stats" data-toggle="tab">Shot Stats</a></li>
 </ul>
 <div class="tab-content">
   <div class="tab-pane fade in active" id="shot_heatmap">
@@ -11,6 +12,9 @@
   </div>
   <div class="tab-pane fade" id="shot_chart">
   	<%= render "charts/scatter_chart" %>
+  </div>
+  <div class="tab-pane fade" id="team_shot_stats">
+    <%= render "data/team_shot_stats" %>
   </div>
 </div>
 <% end %>

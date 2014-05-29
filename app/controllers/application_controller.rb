@@ -44,6 +44,7 @@ class ApplicationController < ActionController::Base
     @games = Game.where("home_team_id = ? OR away_team_id = ?", params['id'], params['id']).order("date ASC")
     @players = Player.where("team_id = ?", params['id']).order("player_last_name ASC")
     @shots = Shot.where("team_id = ?", params['id']).order("id ASC")
+    @team_shot_stats = TeamShotStat.where("team_id = ?", params['id'])
   end
 
   def player
